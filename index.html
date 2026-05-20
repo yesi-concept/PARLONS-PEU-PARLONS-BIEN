@@ -1,321 +1,423 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>011.LE LANGAGE DE LA PERFORMANCE | Y.E.S.I CONCEPT</title>
+<title>Y.E.S.I CONCEPT | FORMATION PREMIUM</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#0f1115;
-    color:white;
-    line-height:1.7;
+font-family:'Inter',sans-serif;
+background:#0f1115;
+color:white;
+line-height:1.7;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:80px 10%;
-    background:
-    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    max-width:900px;
-}
-
-.badge{
-    display:inline-block;
-    padding:10px 22px;
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:50px;
-    margin-bottom:30px;
-    font-size:14px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(5px);
-}
-
-h1{
-    font-family:'Playfair Display',serif;
-    font-size:70px;
-    line-height:1.1;
-    margin-bottom:25px;
-    text-transform:uppercase;
-}
-
-.highlight{
-    color:#caa35d;
-}
-
-.hero p{
-    font-size:20px;
-    color:#d5d5d5;
-    max-width:750px;
-    margin:auto;
-    margin-bottom:40px;
-}
-
-.btn{
-    display:inline-block;
-    padding:18px 40px;
-    background:#caa35d;
-    color:black;
-    text-decoration:none;
-    font-weight:700;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-section{
-    padding:100px 10%;
-}
-
-.section-title{
-    font-family:'Playfair Display',serif;
-    font-size:48px;
-    margin-bottom:25px;
-    text-transform:uppercase;
-}
-
-.section-text{
-    color:#d0d0d0;
-    font-size:18px;
-    max-width:900px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-    margin-top:60px;
-}
-
-.card{
-    background:#171a20;
-    padding:35px;
-    border-radius:22px;
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-.card h3{
-    margin-bottom:15px;
-    font-size:22px;
-    color:#caa35d;
-}
-
-.card p{
-    color:#cfcfcf;
-}
-
-.quote{
-    background:#111318;
-    border-left:4px solid #caa35d;
-    padding:40px;
-    margin-top:60px;
-    border-radius:14px;
-}
-
-.quote p{
-    font-size:24px;
-    font-style:italic;
-    color:white;
-}
-
-.footer{
-    padding:50px 10%;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.08);
-    color:#9e9e9e;
+header{
+padding:30px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #23262d;
+background:#0b0d11;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-    width:110px;
-    margin-bottom:30px;
+font-family:'Playfair Display',serif;
+font-size:28px;
+letter-spacing:2px;
+}
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:14px;
+font-weight:600;
+opacity:0.85;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:950px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:70px;
+margin-bottom:25px;
+text-transform:uppercase;
+}
+
+.hero p{
+font-size:20px;
+color:#d7d7d7;
+margin-bottom:40px;
+}
+
+.cta{
+display:inline-block;
+padding:18px 38px;
+background:white;
+color:black;
+font-weight:700;
+text-decoration:none;
+border-radius:10px;
+transition:0.3s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+}
+
+.section{
+padding:90px 10%;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:42px;
+margin-bottom:40px;
+text-transform:uppercase;
+}
+
+.modules{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.module{
+background:#171a20;
+border:1px solid #2b2f36;
+padding:30px;
+border-radius:18px;
+transition:0.3s;
+}
+
+.module:hover{
+transform:translateY(-5px);
+border-color:white;
+}
+
+.module-number{
+font-size:14px;
+font-weight:700;
+letter-spacing:2px;
+color:#999;
+margin-bottom:15px;
+}
+
+.module h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.module p{
+color:#c9c9c9;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+background:white;
+color:black;
+text-decoration:none;
+font-weight:700;
+border-radius:8px;
+}
+
+.footer{
+padding:40px 20px;
+text-align:center;
+border-top:1px solid #23262d;
+color:#8f8f8f;
+margin-top:80px;
 }
 
 @media(max-width:768px){
 
-    h1{
-        font-size:42px;
-    }
+.hero h1{
+font-size:42px;
+}
 
-    .section-title{
-        font-size:34px;
-    }
+.hero p{
+font-size:18px;
+}
 
-    .hero p{
-        font-size:17px;
-    }
+.section-title{
+font-size:30px;
+}
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+<header>
+
+<div class="logo">
+Y.E.S.I CONCEPT
+</div>
+
+<nav>
+
+<a href="#modules">FORMATIONS</a>
+<a href="https://buy.stripe.com/28EfZgamObLq9cG0yO8k806">PAIEMENT</a>
+
+</nav>
+
+</header>
+
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <img src="logo.png" class="logo">
+<h1>
+FORMATION PREMIUM
+</h1>
 
-        <div class="badge">
-            Y.E.S.I CONCEPT • FORMATION 011
-        </div>
+<p>
+Plateforme autonome Y.E.S.I CONCEPT dédiée à la communication,
+la performance mentale et l’impact verbal dans le sport.
+</p>
 
-        <h1>
-            011.<br>
-            <span class="highlight">
-            LE LANGAGE DE LA PERFORMANCE
-            </span>
-        </h1>
+<a href="#modules" class="cta">
+ACCÉDER AUX MODULES
+</a>
 
-        <p>
-            Les mots influencent la confiance, les émotions et les décisions.
-            Dans la performance, savoir communiquer peut changer un match,
-            une carrière ou un groupe entier.
-        </p>
-
-        <a href="#" class="btn">
-            ACCÉDER À LA FORMATION
-        </a>
-
-    </div>
+</div>
 
 </section>
 
-<section>
+<section class="section" id="modules">
 
-    <h2 class="section-title">
-        Pourquoi cette formation ?
-    </h2>
+<h2 class="section-title">
+Modules disponibles
+</h2>
 
-    <p class="section-text">
-        Un joueur performant n’est pas uniquement un joueur technique.
-        C’est aussi un joueur capable de comprendre, recevoir et utiliser
-        les bons mots au bon moment.
-        Cette formation vous apprend à développer une communication claire,
-        forte et impactante dans le sport de haut niveau.
-    </p>
+<div class="modules">
 
-    <div class="grid">
+<div class="module">
 
-        <div class="card">
-            <h3>Communication</h3>
-            <p>
-                Comprendre comment les mots influencent l’état mental
-                d’un sportif avant, pendant et après une compétition.
-            </p>
-        </div>
+<div class="module-number">
+01
+</div>
 
-        <div class="card">
-            <h3>Leadership</h3>
-            <p>
-                Développer une posture forte, cohérente et crédible
-                dans un environnement de performance.
-            </p>
-        </div>
+<h3>
+FORMATION INITIALE
+</h3>
 
-        <div class="card">
-            <h3>Impact Mental</h3>
-            <p>
-                Utiliser les phrases et les intentions adaptées
-                pour stimuler la concentration et l’engagement.
-            </p>
-        </div>
+<p>
+Base fondamentale du Y.E.S.I CONCEPT et introduction
+à la logique de performance mentale.
+</p>
 
-    </div>
+<a href="01.YESI_Formation_Final.pdf" class="btn" target="_blank">
+OUVRIR
+</a>
 
-    <div class="quote">
-        <p>
-            “Les mots ne changent pas seulement une émotion.
-            Ils peuvent changer une décision.”
-        </p>
-    </div>
+</div>
 
-</section>
+<div class="module">
 
-<section>
+<div class="module-number">
+011
+</div>
 
-    <h2 class="section-title">
-        Ce que vous allez apprendre
-    </h2>
+<h3>
+LE LANGAGE DE LA PERFORMANCE
+</h3>
 
-    <div class="grid">
+<p>
+Formation complète sur la communication efficace,
+l’impact des mots et la posture du coach.
+</p>
 
-        <div class="card">
-            <h3>01</h3>
-            <p>
-                Comprendre les erreurs de communication les plus fréquentes
-                dans le sport.
-            </p>
-        </div>
+<a href="011.LE LANGAGE DE LA PERFORMANCE .html" class="btn" target="_blank">
+OUVRIR
+</a>
 
-        <div class="card">
-            <h3>02</h3>
-            <p>
-                Adapter son discours selon le contexte émotionnel du joueur.
-            </p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>03</h3>
-            <p>
-                Créer des phrases simples, fortes et mémorables.
-            </p>
-        </div>
+<div class="module">
 
-        <div class="card">
-            <h3>04</h3>
-            <p>
-                Développer une communication orientée décision et performance.
-            </p>
-        </div>
+<div class="module-number">
+02
+</div>
 
-    </div>
+<h3>
+ÉTUDE DE CAS MAJID
+</h3>
+
+<p>
+Analyse pratique d’un accompagnement mental
+et lecture comportementale.
+</p>
+
+<a href="02.ETUDE DE CAS MAJID.html" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+<div class="module">
+
+<div class="module-number">
+03
+</div>
+
+<h3>
+ÉTUDE DE CAS ALEXANDRE
+</h3>
+
+<p>
+Compréhension des mécanismes mentaux
+et axes d’amélioration.
+</p>
+
+<a href="03.ETUDE DE CAS ALEXANDRE_.html" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+<div class="module">
+
+<div class="module-number">
+04
+</div>
+
+<h3>
+ÉTUDE DE CAS FANNY
+</h3>
+
+<p>
+Étude comportementale et approche mentale
+adaptée au sportif.
+</p>
+
+<a href="04.ETUDE DE CAS FANNY .html" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+<div class="module">
+
+<div class="module-number">
+05
+</div>
+
+<h3>
+ARTICLE ATTENTION NEUROLOGIQUE
+</h3>
+
+<p>
+Comprendre l’attention et les mécanismes
+de concentration chez le sportif.
+</p>
+
+<a href="05.YESI_Article_Attention_Neurologique.pdf" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+<div class="module">
+
+<div class="module-number">
+06
+</div>
+
+<h3>
+PROTOCOLES DP2 / DOP
+</h3>
+
+<p>
+Méthodologie et protocoles d’utilisation
+des outils Y.E.S.I CONCEPT.
+</p>
+
+<a href="06.YESI_Protocoles_DP2_DOP_Recapitulatif.html" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+<div class="module">
+
+<div class="module-number">
+07
+</div>
+
+<h3>
+WORKBOOK
+</h3>
+
+<p>
+Support pratique et exercices d’application
+autonome.
+</p>
+
+<a href="07Workbook.html" class="btn" target="_blank">
+OUVRIR
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 <footer class="footer">
 
-    <p>
-        Y.E.S.I CONCEPT © 2026
-    </p>
-
-    <p>
-        Mr Din — Préparateur mental diplômé — Concepteur du Y.E.S.I CONCEPT
-    </p>
+© Y.E.S.I CONCEPT — Plateforme Premium
 
 </footer>
 
 </body>
+
 </html>
