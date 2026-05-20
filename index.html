@@ -12,42 +12,63 @@
 body{
     margin:0;
     padding:0;
-    background:#f5f5f5;
-    font-family:Arial, sans-serif;
-    color:#111;
+    background:#0b0b0b;
+    color:white;
+    font-family:Arial,sans-serif;
 }
 
 .container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
-    padding:40px 20px;
+    padding:60px 20px;
 }
 
 h1{
-    font-size:65px;
-    line-height:1;
+    font-size:72px;
+    line-height:0.95;
     margin-bottom:30px;
     text-transform:uppercase;
 }
 
 .subtitle{
     font-size:28px;
+    color:#cfcfcf;
     line-height:1.5;
-    margin-bottom:50px;
+    margin-bottom:40px;
+    max-width:800px;
+}
+
+.price{
+    font-size:54px;
+    font-weight:bold;
+    margin-bottom:40px;
+    color:#d4af37;
+}
+
+.btn-main{
+    display:inline-block;
+    background:#d4af37;
+    color:black;
+    padding:18px 38px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:70px;
 }
 
 .section-title{
-    font-size:38px;
-    margin-bottom:30px;
-    text-transform:uppercase;
+    font-size:42px;
+    margin-bottom:35px;
+    margin-top:50px;
 }
 
 .card{
-    background:white;
+    background:#161616;
+    border:1px solid #2c2c2c;
+    border-radius:16px;
     padding:30px;
-    border-radius:14px;
     margin-bottom:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .card h3{
@@ -58,42 +79,32 @@ h1{
 
 .card p{
     font-size:18px;
-    line-height:1.5;
-    margin-bottom:25px;
+    line-height:1.6;
+    color:#d0d0d0;
 }
 
 .btn{
     display:inline-block;
-    padding:16px 30px;
-    background:black;
-    color:white;
+    margin-top:20px;
+    background:white;
+    color:black;
+    padding:14px 26px;
     text-decoration:none;
-    border-radius:10px;
-    font-size:18px;
+    border-radius:8px;
     font-weight:bold;
-}
-
-.btn:hover{
-    opacity:0.85;
-}
-
-.price{
-    font-size:48px;
-    font-weight:bold;
-    margin-bottom:50px;
 }
 
 .footer{
-    margin-top:80px;
     text-align:center;
-    font-size:16px;
-    opacity:0.7;
+    color:#888;
+    margin-top:80px;
+    font-size:14px;
 }
 
 @media(max-width:768px){
 
 h1{
-    font-size:42px;
+    font-size:46px;
 }
 
 .subtitle{
@@ -101,7 +112,7 @@ h1{
 }
 
 .section-title{
-    font-size:30px;
+    font-size:32px;
 }
 
 .card h3{
@@ -130,96 +141,93 @@ Formation autonome sur la communication EFFICACE de performance.
 95€
 </div>
 
+<a class="btn-main" href="#">
+ACCÉDER À LA FORMATION
+</a>
+
 <h2 class="section-title">
-ACCÈS À LA FORMATION
+Contenu de la formation
 </h2>
 
 <div class="card">
-<h3>01 - Formation principale</h3>
-
+<h3>01 - Formation complète PDF</h3>
 <p>
-Accès au contenu principal de la formation.
+Le support principal de la formation autonome.
 </p>
 
-<a class="btn" href="01.YESI_Formation_Final.pdf">
-OUVRIR LA FORMATION
-</a>
-</div>
-
-<div class="card">
-<h3>02 - Étude de cas MAJID</h3>
-
-<p>
-Analyse complète et communication terrain.
-</p>
-
-<a class="btn" href="02.ETUDE DE CAS MAJID.html">
+<a class="btn" href="./01.YESI_Formation_Final.pdf" target="_blank">
 OUVRIR
 </a>
 </div>
 
 <div class="card">
-<h3>03 - Étude de cas ALEXANDRE</h3>
-
+<h3>02 - Étude de cas Majid</h3>
 <p>
-Comprendre les mécanismes de communication.
+Étude de cas sur l’impact des mots et du langage.
 </p>
 
-<a class="btn" href="03.ETUDE DE CAS ALEXANDRE.html">
+<a class="btn" href="./02.ETUDE DE CAS MAJID.html">
 OUVRIR
 </a>
 </div>
 
 <div class="card">
-<h3>04 - Étude de cas FANNY</h3>
-
+<h3>03 - Étude de cas Alexandre</h3>
 <p>
-Étude comportementale et prise de parole.
+Comprendre les mécanismes émotionnels de communication.
 </p>
 
-<a class="btn" href="04.ETUDE DE CAS FANNY.html">
+<a class="btn" href="./03.ETUDE DE CAS ALEXANDRE.html">
 OUVRIR
 </a>
 </div>
 
 <div class="card">
-<h3>05 - Article Attention Neurologique</h3>
-
+<h3>04 - Étude de cas Fanny</h3>
 <p>
-Comprendre l’attention et la concentration.
+Analyse terrain et prise de décision communicationnelle.
 </p>
 
-<a class="btn" href="05YESI_Article_Attention_Neurologique.pdf">
+<a class="btn" href="./04.ETUDE DE CAS FANNY.html">
+OUVRIR
+</a>
+</div>
+
+<div class="card">
+<h3>05 - Article neurologique</h3>
+<p>
+Comprendre l’impact neurologique des mots.
+</p>
+
+<a class="btn" href="./05.YESI_Article_Attention_Neurologique.pdf" target="_blank">
 OUVRIR
 </a>
 </div>
 
 <div class="card">
 <h3>06 - Protocoles DP2 / DOP</h3>
-
 <p>
-Accès aux protocoles et documents complémentaires.
+Protocoles et récapitulatifs de performance mentale.
 </p>
 
-<a class="btn" href="06YESI_Protocoles_DP2_DOP_Recapitulatif.pdf">
+<a class="btn" href="./06.YESI_Protocoles_DP2_DOP_Recapitulatif.pdf" target="_blank">
 OUVRIR
 </a>
 </div>
 
 <div class="card">
 <h3>07 - Workbook</h3>
-
 <p>
-Support pratique et exercices d’application.
+Workbook pratique pour appliquer la méthode.
 </p>
 
-<a class="btn" href="07Workbook.html">
+<a class="btn" href="./07Workbook.html">
 OUVRIR
 </a>
 </div>
 
 <div class="footer">
-Y.E.S.I CONCEPT — Formation autonome
+Y.E.S.I CONCEPT
 </div>
 
 </div>
