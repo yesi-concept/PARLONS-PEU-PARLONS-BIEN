@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Anatomie de la Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#07111f;
+      color:#f5f7fa;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(0,170,255,.18), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(0,170,255,.12), transparent 25%);
+      z-index:-1;
+    }
+
+    section{
+      width:min(1250px,92%);
+      margin:auto;
+      padding:100px 0;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:900px;
+      height:900px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 0 80px rgba(0,170,255,.03),
+        0 0 0 160px rgba(0,170,255,.02);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:1100px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 20px;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      margin-bottom:25px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-size:.85rem;
+    }
+
+    h1,h2,h3{
+      font-family:'Oswald',sans-serif;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    h1{
+      font-size:clamp(3rem,8vw,7rem);
+      line-height:.95;
+      margin-bottom:25px;
+    }
+
+    h1 span,
+    h2 span,
+    .accent{
+      color:#00aaff;
+    }
+
+    .hero p{
+      max-width:900px;
+      margin:auto;
+      font-size:1.2rem;
+      color:rgba(255,255,255,.85);
+    }
+
+    h2{
+      font-size:clamp(2.2rem,5vw,4rem);
+      margin-bottom:25px;
+    }
+
+    .intro-grid,
+    .duo,
+    .grid{
+      display:grid;
+      gap:35px;
+    }
+
+    .intro-grid{
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+    }
+
+    .duo{
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    }
+
+    .grid{
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      margin-top:40px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:35px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+      transition:.35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(0,170,255,.35);
+    }
+
+    .card h3{
+      font-size:1.7rem;
+      margin-bottom:18px;
+    }
+
+    .label{
+      color:#00aaff;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:.9rem;
+      margin-bottom:12px;
+      display:block;
+    }
+
+    .timeline{
+      margin-top:50px;
+      position:relative;
+      padding-left:35px;
+      border-left:2px solid rgba(0,170,255,.3);
+    }
+
+    .timeline-item{
+      position:relative;
+      margin-bottom:45px;
+      padding-left:10px;
+    }
+
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-45px;
+      top:6px;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:#00aaff;
+      box-shadow:0 0 20px rgba(0,170,255,.9);
+    }
+
+    .quote{
+      margin-top:70px;
+      padding:50px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(0,170,255,.16), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      font-size:1.6rem;
+      text-align:center;
+      font-style:italic;
+      line-height:1.5;
+    }
+
+    .comparison{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+      margin-top:50px;
+    }
+
+    .before{
+      border-top:5px solid #ff5757;
+    }
+
+    .after{
+      border-top:5px solid #00aaff;
+    }
+
+    ul{
+      margin-top:15px;
+      padding-left:20px;
+    }
+
+    li{
+      margin-bottom:10px;
+    }
+
+    .score{
+      text-align:center;
+      padding:80px 20px;
+      border-radius:40px;
+      background:linear-gradient(135deg,#00aaff22,#ffffff08);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .score h2{
+      font-size:6rem;
+      margin-bottom:10px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.04);
+      border-radius:24px;
+      padding:30px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:2rem;
+      color:#00aaff;
+      margin-bottom:8px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.55);
+    }
+
+    @media(max-width:900px){
+      .intro-grid{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:70px 0;
+      }
+
+      .quote{
+        font-size:1.2rem;
+        padding:35px 25px;
+      }
+
+      .score h2{
+        font-size:4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag">Étude de cas U15 Féminine</div>
+    <h1>L'Anatomie de la <span>Performance</span></h1>
+    <p>
+      Comment le langage du leader libère — ou inhibe — le talent.
+      Une immersion dans la psychologie du leadership, la communication sportive
+      et l’impact émotionnel du langage sur la performance collective.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="intro-grid">
+    <div>
+      <h2>Le <span>Contexte</span></h2>
+      <p>
+        Cette étude de cas analyse la relation entre une entraîneure U15 féminine et l’une
+        de ses joueuses les plus talentueuses. À travers plusieurs matchs et interventions,
+        l’étude révèle comment le langage utilisé par un leader peut modifier le comportement,
+        la confiance et les performances d’un talent créatif.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="label">Concept central</span>
+      <h3>Leadership & Langage</h3>
+      <p>
+        Le véritable leadership ne consiste pas à supprimer l’erreur,
+        mais à créer l’environnement psychologique qui permet au talent
+        de s’exprimer pleinement.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Les <span>Acteurs</span></h2>
+
+  <div class="duo">
+    <div class="card">
+      <span class="label">Le Leader</span>
+      <h3>Fanny</h3>
+      <p><strong>Entraîneur — 4 ans d’expérience</strong></p>
+      <br>
+      <p>
+        <span class="accent">Profil :</span> Stratégique, protectrice.
+      </p>
+      <p>
+        <span class="accent">Problématique :</span>
+        Communication focalisée sur les erreurs à corriger.
+        Le langage de l’évitement domine.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="label">Le Talent</span>
+      <h3>Manon</h3>
+      <p><strong>14 ans — Ailière droite</strong></p>
+      <br>
+      <p>
+        <span class="accent">Profil :</span>
+        Explosive, créative, meilleure dribbleuse du groupe.
+      </p>
+      <p>
+        <span class="accent">Vulnérabilité :</span>
+        Instabilité émotionnelle.
+        Devient fantomatique lorsqu’elle se sent critiquée ou surveillée.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Le Langage de <span>l’Évitement</span></h2>
+
+  <div class="card">
+    <span class="label">Le piège de la protection</span>
+      <p>
+        Match de classement contre le leader du championnat.
+        Pression maximale.
+      </p>
+      <br>
+      <h3>Discours d’avant-match</h3>
+      <ul>
+        <li>« Manon, aujourd’hui tu n’as pas le droit de te lancer dans des dribbles inutiles. »</li>
+        <li>« Sois pas égoïste, joue collectif. »</li>
+        <li>« Faites attention à ne pas vous retrouver en sous-nombre. »</li>
+        <li>« Ne soyez pas légères défensivement. »</li>
+      </ul>
+      <br>
+      <p>
+        <span class="accent">Impact immédiat :</span>
+        Manon entre sur le terrain sans audace.
+        Elle perd sa spontanéité et refuse la prise de risque.
+        L’équipe manque de percussion.
+      </p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>18e minute — L’action avortée</h3>
+      <p><strong>Événement :</strong> Manon tente un dribble et perd le ballon.</p>
+      <p><strong>Intervention :</strong> « Pas de dribbles ! Tu joues simple ! »</p>
+      <p><strong>Conséquence :</strong> Manon arrête tout effort offensif et devient invisible.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>44e minute — La paralysie analytique</h3>
+      <p><strong>Événement :</strong> Hésitation sur un ballon, nouvelle perte.</p>
+      <p><strong>Intervention :</strong> « Tu réfléchis trop ! »</p>
+      <p><strong>Conséquence :</strong> Perte totale de confiance. Remplacée à la mi-temps.</p>
+    </div>
+
+  </div>
+
+  <div class="quote">
+    « En pensant la protéger de l’erreur,
+    j’ai inhibé sa principale arme offensive. »
+  </div>
+</section>
+
+<section>
+  <h2>Le Miroir de la <span>Performance</span></h2>
+
+  <div class="comparison">
+
+    <div class="card before">
+      <span class="label">Avant</span>
+      <h3>L’Approche Contrôle</h3>
+      <ul>
+        <li>Focus sur l’évitement de l’erreur</li>
+        <li>Minimisation du risque</li>
+        <li>Consignes négatives et restrictives</li>
+        <li>« Ne fais pas… »</li>
+        <li>« Pas le droit de… »</li>
+      </ul>
+      <br>
+      <p>
+        <span class="accent">Impact :</span>
+        peur, sur-analyse, paralysie mentale.
+      </p>
+    </div>
+
+    <div class="card after">
+      <span class="label">Après</span>
+      <h3>L’Approche Libération</h3>
+      <ul>
+        <li>Focus sur le potentiel</li>
+        <li>Exploitation de l’avantage</li>
+        <li>Consignes positives orientées action</li>
+        <li>« Fais… »</li>
+        <li>« Prends… »</li>
+      </ul>
+      <br>
+      <p>
+        <span class="accent">Impact :</span>
+        confiance, instinct, audace.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Le Nouveau <span>Paradigme</span></h2>
+
+  <div class="card">
+    <span class="label">Le langage du potentiel</span>
+
+    <ul>
+      <li>« On va jouer notre football. »</li>
+      <li>« Agressives avec le ballon, généreuses sans. »</li>
+      <li>« C’est notre identité. »</li>
+      <li>« Manon, tu es notre danger numéro un sur ce côté droit. »</li>
+      <li>« Fais tes dribbles, prends le couloir. »</li>
+      <li>« On joue pour toi autant que tu joues pour nous. »</li>
+      <li>« On reste organisées, mais on n’a pas peur. »</li>
+    </ul>
+
+    <br>
+
+    <p>
+      <span class="accent">Impact immédiat :</span>
+      Manon sourit, se tient droite et réclame le ballon dès l’échauffement.
+      Un changement biomécanique visible.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>La Spirale <span>Positive</span></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>12e minute — L’échec sécurisé</h3>
+      <p><strong>Événement :</strong> Manon perd un dribble.</p>
+      <p><strong>Intervention :</strong> « C’est bien. Continue à prendre l’espace. »</p>
+      <p><strong>Conséquence :</strong> Elle relève la tête et retente immédiatement.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>55e minute — La confiance transmise</h3>
+      <p><strong>Événement :</strong> Pression adverse, l’équipe recule.</p>
+      <p><strong>Intervention :</strong> « Ressortez proprement. Vous avez le temps. »</p>
+      <p><strong>Conséquence :</strong> Manon déclenche une contre-attaque décisive.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>78e minute — Le dépassement de soi</h3>
+      <p><strong>Événement :</strong> Manon fatigue et perd en lucidité.</p>
+      <p><strong>Intervention :</strong> « Dernier effort. Tu décides de ce match. »</p>
+      <p><strong>Conséquence :</strong> Accélération finale et penalty provoqué.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="score">
+    <div class="tag">Résultat tangible</div>
+    <h2>2 - 0</h2>
+    <p>Victoire collective et transformation psychologique complète.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>2</strong>
+        Actions décisives
+      </div>
+
+      <div class="stat">
+        <strong>1</strong>
+        Penalty provoqué
+      </div>
+
+      <div class="stat">
+        <strong>MVP</strong>
+        Nommée joueuse du match
+      </div>
+    </div>
+
+    <div class="quote" style="margin-top:50px;">
+      Manon demande à rester sur le terrain après l’entraînement suivant.
+      Le passage de la peur à la motivation intrinsèque.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La Synthèse du <span>Leader</span></h2>
+
+  <div class="quote">
+    « Le véritable leadership ne consiste pas à dicter l’absence d’erreur,
+    mais à architecturer l’espace nécessaire à l’expression du talent. »
+  </div>
+</section>
+
+<footer>
+  © 2026 — Étude de cas Coach Fanny — HTML Premium Experience
+</footer>
+
+</body>
+</html>

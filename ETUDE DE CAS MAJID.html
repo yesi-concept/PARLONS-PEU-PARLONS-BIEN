@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Pouvoir des Mots — Y.E.S.I CONCEPT</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0A0A0A;
+    --dark2: #111111;
+    --dark3: #1A1A1A;
+    --red: #C0392B;
+    --red-light: #E74C3C;
+    --green: #1A7A4A;
+    --green-light: #27AE60;
+    --blue: #1A5EA8;
+    --blue-light: #2980B9;
+    --white: #F5F0E8;
+    --grey: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background: rgba(10,10,10,0.95);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+  }
+  nav .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+  nav .nav-dots {
+    display: flex; gap: 8px;
+  }
+  nav .nav-dots a {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.3);
+    border: 1px solid var(--gold);
+    display: block;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+  nav .nav-dots a:hover, nav .nav-dots a.active {
+    background: var(--gold);
+  }
+
+  /* SLIDES */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* SLIDE 1 — COVER */
+  .slide-cover {
+    background: radial-gradient(ellipse at 30% 50%, #1a1200 0%, var(--dark) 70%);
+    text-align: center;
+  }
+  .slide-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(201,168,76,0.015) 40px, rgba(201,168,76,0.015) 41px
+    );
+  }
+  .cover-tag {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 6px 20px;
+    margin-bottom: 40px;
+    display: inline-block;
+  }
+  .cover-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--white) 40%, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cover-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    max-width: 600px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+  .cover-brain {
+    font-size: 80px;
+    margin-bottom: 30px;
+    opacity: 0.85;
+  }
+
+  /* SECTION TITLES */
+  .slide-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+  }
+  .slide-title::after {
+    content: '';
+    display: block;
+    width: 60px; height: 3px;
+    background: var(--gold);
+    margin: 16px auto 0;
+  }
+  .slide-title.red::after { background: var(--red); }
+  .slide-title.green::after { background: var(--green-light); }
+  .slide-title.blue::after { background: var(--blue-light); }
+
+  /* SLIDE 2 — SITUATION */
+  .slide-situation {
+    background: linear-gradient(160deg, #0f0000 0%, var(--dark) 60%);
+  }
+  .situation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .profile-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .profile-avatar {
+    font-size: 64px;
+    margin-bottom: 24px;
+    display: block;
+    opacity: 0.7;
+    filter: grayscale(1);
+  }
+  .profile-row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 12px;
+  }
+  .profile-label {
+    font-weight: 700;
+    width: 130px;
+    color: var(--grey);
+    flex-shrink: 0;
+  }
+  .profile-val { color: var(--white); }
+  .profile-val.red { color: var(--red-light); font-weight: 600; }
+  .rupture-card {
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-radius: 4px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .rupture-icon { font-size: 64px; }
+  .rupture-text {
+    font-size: 13px;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.8;
+  }
+  .rupture-text strong { color: var(--red-light); }
+
+  /* SLIDE 3 — ACTE I */
+  .slide-acte1 { background: linear-gradient(160deg, #0f0000 0%, var(--dark) 60%); }
+  .acte-context {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .quotes-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 820px;
+    width: 100%;
+  }
+  .quote-bubble {
+    background: rgba(192,57,43,0.1);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-left: 3px solid var(--red);
+    padding: 18px 24px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.85);
+  }
+  .quote-bubble em { color: var(--red-light); font-style: normal; font-weight: 700; }
+  .quote-bubble:nth-child(even) { margin-left: 40px; }
+  .impact-box {
+    margin-top: 30px;
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.35);
+    padding: 20px 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 820px;
+    width: 100%;
+  }
+  .impact-box strong { color: var(--red-light); }
+
+  /* SLIDE 4 — SPIRALE */
+  .slide-spirale { background: linear-gradient(160deg, #0f0000 0%, var(--dark) 50%); }
+  .timeline {
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--red), rgba(192,57,43,0.1));
+    transform: translateX(-50%);
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+  .tl-left { text-align: right; }
+  .tl-right { text-align: left; }
+  .tl-dot {
+    width: 14px; height: 14px;
+    background: var(--red);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 4px;
+    box-shadow: 0 0 12px rgba(192,57,43,0.6);
+    position: relative;
+    z-index: 1;
+  }
+  .tl-time {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .tl-shout {
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.25);
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    border-radius: 2px;
+  }
+  .tl-impact {
+    font-size: 12px;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+    padding-top: 4px;
+  }
+  .tl-impact strong { color: var(--red-light); }
+
+  /* SLIDE 5 — BILAN */
+  .slide-bilan { background: linear-gradient(160deg, #0a0a0a 0%, #0f0000 100%); }
+  .scoreboard {
+    background: #0d0d0d;
+    border: 2px solid rgba(192,57,43,0.4);
+    box-shadow: 0 0 60px rgba(192,57,43,0.15), inset 0 0 40px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    padding: 30px 60px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .score-team {
+    text-align: center;
+    flex: 1;
+  }
+  .score-name {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 10px;
+  }
+  .score-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--white);
+  }
+  .score-sep {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(255,255,255,0.2);
+  }
+  .defeat-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: var(--red);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .bilan-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .bilan-col h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .bilan-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bilan-list li {
+    font-size: 13px;
+    color: rgba(245,240,232,0.7);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .bilan-list li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  /* SLIDE 6 — BASCULE */
+  .slide-bascule {
+    background: radial-gradient(ellipse at center, #001a0d 0%, var(--dark) 70%);
+    text-align: center;
+  }
+  .bascule-icon { font-size: 80px; margin-bottom: 30px; opacity: 0.8; }
+  .bascule-text {
+    font-size: 16px;
+    color: rgba(245,240,232,0.7);
+    max-width: 500px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+  .bascule-text strong { color: var(--gold); }
+  .pillars {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pillar-tag {
+    background: rgba(39,174,96,0.1);
+    border: 1px solid rgba(39,174,96,0.3);
+    color: var(--green-light);
+    padding: 10px 22px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  /* SLIDE 7 — ACTE II */
+  .slide-acte2 { background: linear-gradient(160deg, #001a0d 0%, var(--dark) 60%); }
+  .quote-bubble.green {
+    background: rgba(39,174,96,0.07);
+    border-color: rgba(39,174,96,0.2);
+    border-left-color: var(--green-light);
+  }
+  .quote-bubble.green em { color: var(--green-light); }
+  .impact-box.green {
+    background: rgba(39,174,96,0.08);
+    border-color: rgba(39,174,96,0.3);
+  }
+  .impact-box.green strong { color: var(--green-light); }
+
+  /* SLIDE 8 — COACHING REGEN */
+  .slide-regen { background: linear-gradient(160deg, #001a0d 0%, var(--dark) 60%); }
+  .tl-shout.green {
+    background: rgba(39,174,96,0.08);
+    border-color: rgba(39,174,96,0.2);
+    color: var(--green-light);
+  }
+  .timeline.green::before {
+    background: linear-gradient(to bottom, var(--green-light), rgba(39,174,96,0.1));
+  }
+  .tl-dot.green { background: var(--green-light); box-shadow: 0 0 12px rgba(39,174,96,0.5); }
+
+  /* SLIDE 9 — VICTOIRE */
+  .slide-victoire {
+    background: radial-gradient(ellipse at 50% 30%, #002010 0%, var(--dark) 65%);
+    text-align: center;
+  }
+  .victoire-score {
+    border: 2px solid rgba(39,174,96,0.5);
+    box-shadow: 0 0 60px rgba(39,174,96,0.1);
+    padding: 24px 60px;
+    border-radius: 4px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .victoire-score .score-num { color: var(--green-light); }
+  .victoire-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 8px;
+    color: var(--green-light);
+    margin-bottom: 50px;
+  }
+  .victoire-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 900px;
+    width: 100%;
+    text-align: left;
+  }
+  .victoire-col h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .victoire-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .victoire-list li {
+    font-size: 13px;
+    color: rgba(245,240,232,0.7);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .victoire-list li::before {
+    content: '✓';
+    position: absolute; left: 0;
+    color: var(--green-light); font-weight: 700;
+  }
+  .victoire-list li strong { color: var(--green-light); }
+
+  /* SLIDE 10 — ÉPIPHANIE */
+  .slide-epiphanie {
+    background: radial-gradient(ellipse at center, #120d00 0%, var(--dark) 70%);
+    text-align: center;
+  }
+  .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.6;
+    color: var(--gold-light);
+    max-width: 700px;
+    position: relative;
+    margin-bottom: 16px;
+    padding: 30px;
+  }
+  .big-quote::before {
+    content: '"';
+    position: absolute; top: -10px; left: 0;
+    font-size: 100px; color: rgba(201,168,76,0.12);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .quote-author {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 50px;
+  }
+  .lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+  }
+  .lesson {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 14px;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.6;
+  }
+  .lesson-check {
+    width: 22px; height: 22px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .lesson strong { color: var(--white); }
+
+  /* SLIDE 11 — MÉTHODE */
+  .slide-methode { background: linear-gradient(160deg, #00101a 0%, var(--dark) 60%); }
+  .methode-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .proto-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 4px;
+  }
+  .proto-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .proto-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+  .proto-icon { color: var(--gold); font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+  .proto-label { color: var(--grey); width: 80px; flex-shrink: 0; }
+  .proto-val { color: rgba(245,240,232,0.8); }
+  .principe-box {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(41,128,185,0.08);
+    border: 1px solid rgba(41,128,185,0.25);
+    border-left: 3px solid var(--blue-light);
+    padding: 20px 28px;
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.75);
+  }
+  .principe-box strong { color: var(--blue-light); }
+
+  /* SLIDE 12 — D.P² TABLEAU */
+  .slide-dp2 { background: linear-gradient(160deg, #001a0d 0%, var(--dark) 60%); }
+  .dp2-steps {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .dp2-step {
+    background: rgba(39,174,96,0.1);
+    border: 1px solid rgba(39,174,96,0.2);
+    padding: 8px 18px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--green-light);
+    border-radius: 2px;
+  }
+  .comparison-table {
+    max-width: 900px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .comparison-table th {
+    padding: 14px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .comparison-table th.col-red { color: var(--red-light); background: rgba(192,57,43,0.1); }
+  .comparison-table th.col-green { color: var(--green-light); background: rgba(39,174,96,0.1); }
+  .comparison-table th.col-label { color: var(--grey); background: rgba(255,255,255,0.03); width: 140px; }
+  .comparison-table td {
+    padding: 14px 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .comparison-table td:first-child { color: var(--grey); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  .comparison-table td.neg { color: rgba(192,57,43,0.85); background: rgba(192,57,43,0.05); }
+  .comparison-table td.pos { color: rgba(39,174,96,0.9); background: rgba(39,174,96,0.05); }
+  .comparison-table td.pos strong { color: var(--green-light); }
+
+  /* SLIDE 13 — D.O.P */
+  .slide-dop { background: linear-gradient(160deg, #00101a 0%, var(--dark) 60%); }
+  .dop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .dop-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-top: 2px solid var(--blue);
+    padding: 24px 20px;
+    border-radius: 2px;
+  }
+  .dop-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: var(--blue-light);
+    margin-bottom: 8px;
+  }
+  .dop-state {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .dop-phrase {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    line-height: 1.4;
+  }
+
+  /* SLIDE 14 — CERVEAU */
+  .slide-cerveau { background: linear-gradient(160deg, #00101a 0%, var(--dark) 60%); }
+  .brain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .brain-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 28px 24px;
+    border-radius: 2px;
+  }
+  .brain-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--blue-light);
+    margin-bottom: 12px;
+  }
+  .brain-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.65);
+  }
+  .brain-card p strong { color: var(--white); }
+
+  /* SLIDE 15 — CTA */
+  .slide-cta {
+    background: radial-gradient(ellipse at 50% 50%, #120d00 0%, var(--dark) 70%);
+    text-align: center;
+  }
+  .cta-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 90px);
+    letter-spacing: 3px;
+    line-height: 1.05;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, var(--white) 30%, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cta-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .cta-col {
+    padding: 28px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .cta-col.bad {
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.2);
+    color: rgba(245,240,232,0.65);
+  }
+  .cta-col.bad h3 { color: var(--red-light); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .cta-col.good {
+    background: rgba(39,174,96,0.08);
+    border: 1px solid rgba(39,174,96,0.2);
+    color: rgba(245,240,232,0.65);
+  }
+  .cta-col.good h3 { color: var(--green-light); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .cta-tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 30px;
+  }
+  .cta-contact {
+    font-size: 13px;
+    color: var(--grey);
+    letter-spacing: 2px;
+  }
+  .cta-contact a { color: var(--gold-light); text-decoration: none; }
+
+  /* DIVIDERS */
+  .section-num {
+    position: absolute;
+    top: 100px; left: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    user-select: none;
+  }
+
+  @media (max-width: 768px) {
+    .slide { padding: 80px 24px 40px; }
+    nav { padding: 14px 24px; }
+    .situation-grid, .methode-cols, .dop-grid, .bilan-cols, .victoire-cols, .brain-grid, .cta-cols { grid-template-columns: 1fr; }
+    .tl-item { grid-template-columns: 1fr 30px 1fr; gap: 10px; }
+    .scoreboard, .victoire-score { flex-direction: column; padding: 24px; gap: 16px; }
+    .section-num { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Y.E.S.I CONCEPT</div>
+  <div class="nav-dots">
+    <a href="#slide1" title="Couverture"></a>
+    <a href="#slide2" title="Situation"></a>
+    <a href="#slide3" title="Acte I"></a>
+    <a href="#slide4" title="Spirale"></a>
+    <a href="#slide5" title="Bilan"></a>
+    <a href="#slide6" title="Bascule"></a>
+    <a href="#slide7" title="Acte II"></a>
+    <a href="#slide8" title="Coaching"></a>
+    <a href="#slide9" title="Victoire"></a>
+    <a href="#slide10" title="Épiphanie"></a>
+    <a href="#slide11" title="Méthode"></a>
+    <a href="#slide12" title="D.P²"></a>
+    <a href="#slide13" title="D.O.P"></a>
+    <a href="#slide14" title="Cerveau"></a>
+    <a href="#slide15" title="CTA"></a>
+  </div>
+</nav>
+
+<!-- SLIDE 1 — COUVERTURE -->
+<section class="slide slide-cover" id="slide1">
+  <div class="cover-brain">🧠</div>
+  <div class="cover-tag">Étude de Cas · Y.E.S.I CONCEPT Coaching</div>
+  <h1 class="cover-title">Le Pouvoir<br>des Mots</h1>
+  <p class="cover-sub">Comment la maîtrise de la communication neurolinguistique a changé le destin d'une équipe.</p>
+</section>
+
+<!-- SLIDE 2 — SITUATION INITIALE -->
+<section class="slide slide-situation" id="slide2">
+  <span class="section-num">01</span>
+  <h2 class="slide-title red">La Situation Initiale</h2>
+  <div class="situation-grid">
+    <div class="profile-card">
+      <span class="profile-avatar">👤</span>
+      <div class="profile-row"><span class="profile-label">Nom</span><span class="profile-val">Majid</span></div>
+      <div class="profile-row"><span class="profile-label">Rôle</span><span class="profile-val">Entraîneur U12</span></div>
+      <div class="profile-row"><span class="profile-label">Expérience</span><span class="profile-val">5 ans</span></div>
+      <div class="profile-row" style="border:none;padding:0;margin:0"><span class="profile-label">Problématique</span><span class="profile-val red">Communication négative & gestion émotionnelle défaillante</span></div>
+    </div>
+    <div class="rupture-card">
+      <div class="rupture-icon">💔</div>
+      <p class="rupture-text">Le match contre <strong>Le Bourget (13 Déc. 2024)</strong> sert de point de rupture, révélant l'<strong>impact destructeur</strong> de sa communication.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3 — ACTE I -->
+<section class="slide slide-acte1" id="slide3">
+  <span class="section-num">02</span>
+  <h2 class="slide-title red">Acte I — Le Discours qui Sème le Doute</h2>
+  <p class="acte-context">⏱ Vestiaire · Avant le match vs Le Bourget</p>
+  <div class="quotes-stack">
+    <div class="quote-bubble">"Les gars, aujourd'hui <em>ça va être dur</em>. Le Bourget, ils sont <em>costauds</em>, il ne faut <em>surtout pas les laisser jouer</em> !"</div>
+    <div class="quote-bubble">"Théo, toi surtout, <em>ne perds pas le ballon bêtement</em> comme la dernière fois. Attention à <em>ne pas faire les mêmes erreurs</em> qu'au dernier match hein !"</div>
+    <div class="quote-bubble"><em>Surtout ne stressez pas</em>, mais franchement si vous n'êtes pas concentrés, on va <em>se faire écraser</em>."</div>
+    <div class="quote-bubble">"On <em>ne peut pas se permettre de perdre</em> aujourd'hui ! J'espère que vous n'allez pas <em>jouer chacun dans votre coin</em> comme d'habitude..."</div>
+  </div>
+  <div class="impact-box">
+    💔 <strong>Impact sur l'équipe :</strong> Les joueurs sortent du vestiaire tendus, anxieux, avec la peur de faire des erreurs. Théo se sent particulièrement visé et arrive sur le terrain déjà dans le doute.
+  </div>
+</section>
+
+<!-- SLIDE 4 — SPIRALE NÉGATIVE -->
+<section class="slide slide-spirale" id="slide4">
+  <span class="section-num">03</span>
+  <h2 class="slide-title red">La Spirale Négative en Plein Match</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time">20e minute</div>
+        <div class="tl-shout">"MAIS THÉO ! C'ÉTAIT POURTANT PAS COMPLIQUÉ ! TU NE PEUX PAS RATER ÇA ! RÉFLÉCHIS ! C'EST PAS POSSIBLE D'ÊTRE AUSSI MOU !"</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-right">
+        <p class="tl-time">Théo rate une occasion</p>
+        <p class="tl-impact">Théo <strong>baisse la tête</strong>, se referme, ne demande plus le ballon.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time">35e minute</div>
+        <div class="tl-shout">"THÉO ! ARRÊTE DE PERDRE DES BALLONS COMME ÇA ! T'ES PAS DANS TON MATCH ! RÉVEILLE-TOI !"</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-right">
+        <p class="tl-time">Théo perd un ballon</p>
+        <p class="tl-impact">Théo est <strong>complètement fermé</strong>, évite le ballon, a peur de prendre des initiatives.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time">Mi-temps</div>
+        <div class="tl-shout" style="font-size:11px;font-weight:400;text-transform:none;color:rgba(245,240,232,0.7)">Majid : "Théo, tu sors. T'es pas dedans aujourd'hui. Tu me déçois, vraiment."</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-right">
+        <p class="tl-time">La décision finale</p>
+        <p class="tl-impact">Théo sort en pleurs. <strong>Confiance détruite.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5 — BILAN -->
+<section class="slide slide-bilan" id="slide5">
+  <span class="section-num">04</span>
+  <h2 class="slide-title red">Le Bilan : Une Défaite sur Tous les Plans</h2>
+  <div class="scoreboard">
+    <div class="score-team"><div class="score-name">Équipe de Majid</div><div class="score-num">0</div></div>
+    <div class="score-sep">–</div>
+    <div class="score-team"><div class="score-name">Le Bourget</div><div class="score-num" style="color:var(--red-light)">3</div></div>
+  </div>
+  <div class="defeat-label">DÉFAITE</div>
+  <div class="bilan-cols">
+    <div class="bilan-col">
+      <h3>État de Théo Post-Match</h3>
+      <ul class="bilan-list">
+        <li>Démotivé, en pleurs.</li>
+        <li>Perte totale de confiance.</li>
+        <li>Évite le regard du coach.</li>
+        <li>Demande à ses parents s'il peut arrêter le football.</li>
+      </ul>
+    </div>
+    <div class="bilan-col">
+      <h3>État de l'équipe</h3>
+      <ul class="bilan-list">
+        <li>Joueurs tendus, pas de cohésion.</li>
+        <li>Multiplication des erreurs individuelles dues au stress.</li>
+        <li>Climat de peur et de reproche.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6 — POINT DE BASCULE -->
+<section class="slide slide-bascule" id="slide6">
+  <span class="section-num">05</span>
+  <div class="bascule-icon">🔄</div>
+  <h2 class="slide-title">Le Point de Bascule</h2>
+  <p class="bascule-text">Face à l'échec, Majid s'engage dans une <strong>formation intensive de 3 semaines</strong> avec Y.E.S.I. CONCEPT.</p>
+  <div class="pillars">
+    <div class="pillar-tag">Maîtrise émotionnelle</div>
+    <div class="pillar-tag">Communication positive</div>
+    <div class="pillar-tag">Impact des mots</div>
+    <div class="pillar-tag">Protocoles D.P² & D.O.P</div>
+  </div>
+</section>
+
+<!-- SLIDE 7 — ACTE II -->
+<section class="slide slide-acte2" id="slide7">
+  <span class="section-num">06</span>
+  <h2 class="slide-title green">Acte II — Le Discours qui Construit la Confiance</h2>
+  <p class="acte-context">⏱ Vestiaire · 3 semaines plus tard · Avant le match vs Chelles (5 Jan. 2025)</p>
+  <div class="quotes-stack">
+    <div class="quote-bubble green">"Les gars, aujourd'hui on va <em>se faciliter les choses</em>. On va <em>imposer notre jeu</em> dès le début."</div>
+    <div class="quote-bubble green">"Théo (contact visuel bienveillant), toi et toute la ligne d'attaque, <em>prenez les bonnes décisions</em> avec le ballon. <em>Jouez simple, jouez juste.</em>"</div>
+    <div class="quote-bubble green">"<em>Restez sereins, jouez votre jeu</em>. On <em>joue ensemble</em>, chaque action collective nous rapproche de la victoire."</div>
+    <div class="quote-bubble green">"<em>Concentration maximale</em>, on va les étouffer. On <em>finit fort</em>, jusqu'au coup de sifflet final." (Main sur le cœur) <em>J'ai confiance en vous.</em>"</div>
+  </div>
+  <div class="impact-box green">
+    💚 <strong>Impact sur l'équipe :</strong> Les joueurs sortent du vestiaire confiants, sereins, motivés. Théo sourit, il se sent en confiance. L'équipe est mentalement prête.
+  </div>
+</section>
+
+<!-- SLIDE 8 — COACHING REGEN -->
+<section class="slide slide-regen" id="slide8">
+  <span class="section-num">07</span>
+  <h2 class="slide-title green">Le Coaching Régénérateur en Plein Match</h2>
+  <div class="timeline green" style="--line:var(--green-light)">
+    <style>.timeline.green::before{background:linear-gradient(to bottom,var(--green-light),rgba(39,174,96,.1))}</style>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time" style="color:var(--green-light)">8e minute</div>
+        <div class="tl-shout green">Majid : "C'est fait. Replace-toi. Tu redemandes."</div>
+      </div>
+      <div class="tl-dot green"></div>
+      <div class="tl-right">
+        <p class="tl-time">Théo rate une action (similaire au 1er match)</p>
+        <p class="tl-impact">Théo acquiesce, lève le pouce, reste dans le match.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time" style="color:var(--green-light)">15e minute</div>
+        <div class="tl-shout green">Majid : "Simplifie, Théo. Une touche si besoin."</div>
+      </div>
+      <div class="tl-dot green"></div>
+      <div class="tl-right">
+        <p class="tl-time">Théo perd un ballon en dribblant</p>
+        <p class="tl-impact">Reçoit une solution claire et actionnable, pas un jugement.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-time" style="color:var(--green-light)">42e minute</div>
+        <div class="tl-shout green">Majid : "Bloc compact ! Une action à la fois ! Calme, on contrôle !"</div>
+      </div>
+      <div class="tl-dot green"></div>
+      <div class="tl-right">
+        <p class="tl-time">Pression adverse forte</p>
+        <p class="tl-impact">L'équipe se resserre et retrouve son organisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9 — VICTOIRE -->
+<section class="slide slide-victoire" id="slide9">
+  <span class="section-num">08</span>
+  <h2 class="slide-title green">Le Triomphe : Une Victoire Humaine et Sportive</h2>
+  <div class="victoire-score">
+    <div class="score-team"><div class="score-name">Équipe de Majid</div><div class="score-num">3</div></div>
+    <div class="score-sep" style="color:rgba(255,255,255,0.15)">–</div>
+    <div class="score-team"><div class="score-name">Chelles</div><div class="score-num" style="color:rgba(245,240,232,0.4)">1</div></div>
+  </div>
+  <div class="victoire-label">VICTOIRE</div>
+  <div class="victoire-cols">
+    <div class="victoire-col">
+      <h3>⭐ Performance de Théo</h3>
+      <ul class="victoire-list">
+        <li>1 but, 1 passe décisive.</li>
+        <li>90 minutes jouées avec confiance.</li>
+        <li>Élu <strong>homme du match</strong>.</li>
+        <li><strong>Sourire retrouvé</strong>, demande "Quand est le prochain match ?"</li>
+      </ul>
+    </div>
+    <div class="victoire-col">
+      <h3>👥 État de l'équipe</h3>
+      <ul class="victoire-list">
+        <li><strong>Cohésion parfaite</strong>, joueurs sereins.</li>
+        <li><strong>Communication positive</strong> sur le terrain.</li>
+        <li><strong>Résilience</strong> face aux moments difficiles.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10 — ÉPIPHANIE -->
+<section class="slide slide-epiphanie" id="slide10">
+  <span class="section-num">09</span>
+  <h2 class="slide-title">L'Épiphanie du Coach</h2>
+  <blockquote class="big-quote">J'ai enfin compris que mes mots construisent ou détruisent. Aujourd'hui j'ai construit. Je ne reviendrai jamais en arrière.</blockquote>
+  <p class="quote-author">— Majid, après le match vs Chelles</p>
+  <div class="lessons">
+    <div class="lesson"><span class="lesson-check">✓</span><span>Ses émotions sont <strong>contagieuses</strong>.</span></div>
+    <div class="lesson"><span class="lesson-check">✓</span><span>Les mots <strong>programment l'action</strong>.</span></div>
+    <div class="lesson"><span class="lesson-check">✓</span><span>Respirer 3 secondes peut <strong>sauver une carrière</strong>.</span></div>
+    <div class="lesson"><span class="lesson-check">✓</span><span><strong>Court et percutant</strong> > Long et négatif.</span></div>
+    <div class="lesson"><span class="lesson-check">✓</span><span>Le coach est un <strong>régulateur émotionnel</strong>.</span></div>
+  </div>
+</section>
+
+<!-- SLIDE 11 — MÉTHODE -->
+<section class="slide slide-methode" id="slide11">
+  <span class="section-num">10</span>
+  <h2 class="slide-title blue">La Méthode : Les Deux Piliers</h2>
+  <div class="methode-cols">
+    <div class="proto-card">
+      <h3>Protocole 1 : D.P²</h3>
+      <p style="font-size:11px;color:var(--grey);letter-spacing:1px;margin-bottom:20px;text-transform:uppercase">Discours Principal Positif</p>
+      <div class="proto-row"><span class="proto-icon">🎯</span><span class="proto-label">Quand</span><span class="proto-val">AVANT la compétition (vestiaire, briefing).</span></div>
+      <div class="proto-row"><span class="proto-icon">🧠</span><span class="proto-label">Objectif</span><span class="proto-val">Installer un état mental optimal, prévenir les schémas négatifs.</span></div>
+      <div class="proto-row"><span class="proto-icon">•</span><span class="proto-label">Style</span><span class="proto-val">Préventif, motivationnel, structuré.</span></div>
+    </div>
+    <div class="proto-card">
+      <h3>Protocole 2 : D.O.P</h3>
+      <p style="font-size:11px;color:var(--grey);letter-spacing:1px;margin-bottom:20px;text-transform:uppercase">Discours Opportun Positif</p>
+      <div class="proto-row"><span class="proto-icon">🎯</span><span class="proto-label">Quand</span><span class="proto-val">PENDANT la compétition (en direct, temps mort).</span></div>
+      <div class="proto-row"><span class="proto-icon">🧠</span><span class="proto-label">Objectif</span><span class="proto-val">Recadrer immédiatement, interrompre une spirale négative.</span></div>
+      <div class="proto-row"><span class="proto-icon">•</span><span class="proto-label">Style</span><span class="proto-val">Réactif, correctif, ultra-court (3–6 mots).</span></div>
+    </div>
+  </div>
+  <div class="principe-box">
+    🔵 <strong>Principe Fondamental :</strong> Le cerveau ne comprend pas la négation. Dire <em>"Ne perds pas le ballon"</em> oblige le cerveau à visualiser la perte du ballon.
+  </div>
+</section>
+
+<!-- SLIDE 12 — D.P² TABLEAU -->
+<section class="slide slide-dp2" id="slide12">
+  <span class="section-num">11</span>
+  <h2 class="slide-title green">Maîtriser le D.P² : Transformer le Négatif</h2>
+  <div class="dp2-steps">
+    <div class="dp2-step">1. Faciliter</div>
+    <div class="dp2-step">2. Valoriser</div>
+    <div class="dp2-step">3. Orienter vers l'action</div>
+    <div class="dp2-step">4. Créer la confiance</div>
+    <div class="dp2-step">5. Donner du contrôle</div>
+  </div>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th class="col-label"></th>
+        <th class="col-red">✗ Avant</th>
+        <th class="col-green">✓ Après</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Difficulté</td><td class="neg">"Ça va être dur..."</td><td class="pos">"On va <strong>se faciliter</strong> les choses."</td></tr>
+      <tr><td>Erreurs</td><td class="neg">"Ne faites pas les mêmes erreurs..."</td><td class="pos">"<strong>Appliquez</strong> ce qu'on a travaillé cette semaine."</td></tr>
+      <tr><td>Stress</td><td class="neg">"Ne stressez pas..."</td><td class="pos">"<strong>Restez sereins</strong>, jouez votre jeu."</td></tr>
+      <tr><td>Enjeu</td><td class="neg">"On ne peut pas se permettre de perdre..."</td><td class="pos">"On va <strong>prendre</strong> ce match."</td></tr>
+      <tr><td>Cohésion</td><td class="neg">"Ne jouez pas chacun dans votre coin..."</td><td class="pos">"On <strong>joue ensemble</strong>."</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SLIDE 13 — D.O.P -->
+<section class="slide slide-dop" id="slide13">
+  <span class="section-num">12</span>
+  <h2 class="slide-title blue">L'Art du D.O.P : Des Mots-Clés pour Gérer le Chaos</h2>
+  <p style="font-size:13px;color:var(--grey);margin-bottom:36px;text-align:center;letter-spacing:1px">Interventions de <strong style="color:var(--white)">3 à 6 mots maximum</strong> pour couper l'émotion négative et relancer l'action.</p>
+  <div class="dop-grid">
+    <div class="dop-card">
+      <h4>⚡ Erreur Immédiate</h4>
+      <div class="dop-state">État : Frustration</div>
+      <div class="dop-phrase">"C'est fait. Replace-toi. Tu redemandes."</div>
+    </div>
+    <div class="dop-card">
+      <h4>🧱 Accumulation d'Erreurs</h4>
+      <div class="dop-state">État : Doute</div>
+      <div class="dop-phrase">"Simplifie. Une touche si besoin."</div>
+    </div>
+    <div class="dop-card">
+      <h4>⚙️ Temps Faible Collectif</h4>
+      <div class="dop-state">État : Confusion</div>
+      <div class="dop-phrase">"Bloc compact. Une action à la fois."</div>
+    </div>
+    <div class="dop-card">
+      <h4>🛡️ Pression Adverse Forte</h4>
+      <div class="dop-state">État : Tension</div>
+      <div class="dop-phrase">"Calme. Fixe, puis joue."</div>
+    </div>
+    <div class="dop-card">
+      <h4>✨ Temps Fort Individuel</h4>
+      <div class="dop-state">État : Euphorie</div>
+      <div class="dop-phrase">"Même intensité. Même exigence."</div>
+    </div>
+    <div class="dop-card">
+      <h4>⏱️ Moment Clé (Fin de match)</h4>
+      <div class="dop-state">État : Pression max</div>
+      <div class="dop-phrase">"Fais simple. Confiance."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 14 — CERVEAU -->
+<section class="slide slide-cerveau" id="slide14">
+  <span class="section-num">13</span>
+  <h2 class="slide-title blue">Ce Qui se Passe Dans le Cerveau de l'Athlète</h2>
+  <div class="brain-grid">
+    <div class="brain-card">
+      <h4>🧠 Neurosciences</h4>
+      <p>Un mot négatif active l'<strong>amygdale</strong> (peur). Un mot positif active le <strong>cortex préfrontal</strong> (action planifiée).</p>
+    </div>
+    <div class="brain-card">
+      <h4>💭 Psychologie Cognitive</h4>
+      <p>Le cerveau traite les mots comme des <strong>commandes</strong>. "Prends les bonnes décisions" est un programme d'action.</p>
+    </div>
+    <div class="brain-card">
+      <h4>🔄 Contagion Émotionnelle</h4>
+      <p>Les <strong>neurones miroirs</strong> reproduisent l'état émotionnel du coach. Votre calme = leur calme.</p>
+    </div>
+    <div class="brain-card">
+      <h4>👁️ Effet Pygmalion</h4>
+      <p>Ce que vous dites devient ce qu'ils <strong>croient</strong>. "Vous allez les étouffer" crée une croyance de domination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 15 — CTA -->
+<section class="slide slide-cta" id="slide15">
+  <span class="section-num">14</span>
+  <h1 class="cta-headline">Vos Mots<br>Construisent<br>ou Détruisent.</h1>
+  <div class="cta-cols">
+    <div class="cta-col bad">
+      <h3>Sans ces protocoles</h3>
+      Vous sabotez mentalement vos joueurs sans le savoir et limitez leur potentiel de <strong style="color:var(--red-light)">30–40%</strong>.
+    </div>
+    <div class="cta-col good">
+      <h3>Avec ces protocoles</h3>
+      Vous libérez leur potentiel et devenez un <strong style="color:var(--green-light)">multiplicateur de performance</strong>.
+    </div>
+  </div>
+  <p class="cta-tagline">Un coach qui maîtrise ses mots maîtrise la performance de son équipe.</p>
+  <p class="cta-contact">Y.E.S.I CONCEPT COACHING · <a href="mailto:yesiconcept.rdv@gmail.com">yesiconcept.rdv@gmail.com</a></p>
+</section>
+
+<script>
+  const dots = document.querySelectorAll('.nav-dots a');
+  const slides = document.querySelectorAll('.slide');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = Array.from(slides).indexOf(e.target);
+        dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

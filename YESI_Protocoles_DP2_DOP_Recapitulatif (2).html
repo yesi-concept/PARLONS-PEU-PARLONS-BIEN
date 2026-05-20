@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y.E.S.I CONCEPT COACHING - Protocoles de Communication</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table .protocol-name {
+            font-weight: bold;
+            color: #2a5298;
+            font-size: 1.3em;
+        }
+
+        .protocol-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #2a5298;
+        }
+
+        .protocol-section h2 {
+            color: #1e3c72;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .protocol-section h3 {
+            color: #2a5298;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .principles {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .principles ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .principles li {
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+            font-size: 1.05em;
+        }
+
+        .principles li::before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .example-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .example-card h4 {
+            color: #d32f2f;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wrong {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #d32f2f;
+            color: #c62828;
+            font-style: italic;
+        }
+
+        .right {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4CAF50;
+            color: #2e7d32;
+            font-weight: 500;
+        }
+
+        .explanation {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+            font-size: 0.95em;
+            color: #e65100;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #4CAF50;
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .advantage-card h4 {
+            color: #1e3c72;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .advantage-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .advantage-card li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .advantage-card li::before {
+            content: "→";
+            color: #4CAF50;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .situation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .situation-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 3px solid #2196F3;
+        }
+
+        .situation-card h5 {
+            color: #1e3c72;
+            font-size: 1.15em;
+            margin-bottom: 12px;
+        }
+
+        .situation-card .emotion {
+            background: #ffebee;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.95em;
+            color: #c62828;
+            font-style: italic;
+        }
+
+        .situation-card .objective {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 0.95em;
+            color: #1565c0;
+            font-weight: 500;
+        }
+
+        .situation-card .examples {
+            margin-top: 15px;
+        }
+
+        .situation-card .sport-example {
+            background: #f1f8e9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 6px 0;
+            font-size: 0.9em;
+            color: #33691e;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 1.05em;
+        }
+
+        .key-principle {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Nouvelle section WHY */
+        .why-section {
+            margin: 40px 0;
+        }
+
+        .why-section h2 {
+            color: #1e3c72;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .why-card, .solution-card, .science-card, .impact-card, .warning-card, .call-to-action-card {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .why-card {
+            border-left: 5px solid #d32f2f;
+        }
+
+        .solution-card {
+            border-left: 5px solid #4CAF50;
+        }
+
+        .science-card {
+            border-left: 5px solid #2196F3;
+        }
+
+        .impact-card {
+            border-left: 5px solid #9C27B0;
+        }
+
+        .warning-card {
+            border-left: 5px solid #FF9800;
+        }
+
+        .call-to-action-card {
+            border-left: 5px solid #1e3c72;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+
+        .why-card h3, .solution-card h3, .science-card h3, .impact-card h3, .warning-card h3, .call-to-action-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .problem-statement {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #333;
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .problem-details {
+            margin-top: 20px;
+        }
+
+        .problem-item {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            align-items: start;
+        }
+
+        .problem-item .icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+
+        .problem-item strong {
+            display: block;
+            color: #d32f2f;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+
+        .problem-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .solution-grid {
+            display: grid;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .solution-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .solution-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .solution-item h4 {
+            font-size: 1.25em;
+            color: #1e3c72;
+            margin-bottom: 12px;
+        }
+
+        .solution-item p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid #4CAF50;
+            font-size: 0.95em;
+        }
+
+        .example-box strong {
+            color: #2e7d32;
+        }
+
+        .comparison-box {
+            margin-top: 15px;
+        }
+
+        .comparison-box .bad {
+            background: #ffebee;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            color: #c62828;
+            border-left: 3px solid #d32f2f;
+        }
+
+        .comparison-box .good {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            color: #2e7d32;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .science-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .science-point {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2196F3;
+            line-height: 1.7;
+        }
+
+        .science-point strong {
+            display: block;
+            color: #1565c0;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .impact-list {
+            margin-top: 20px;
+        }
+
+        .impact-item {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f3e5f5;
+            border-radius: 10px;
+            align-items: start;
+            border-left: 4px solid #9C27B0;
+        }
+
+        .impact-icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+
+        .impact-item strong {
+            display: block;
+            color: #6a1b9a;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+
+        .impact-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .stakes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .stake-danger, .stake-success {
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .stake-danger {
+            background: #ffebee;
+            border-left: 5px solid #d32f2f;
+        }
+
+        .stake-danger strong {
+            color: #c62828;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .stake-success {
+            background: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .stake-success strong {
+            color: #2e7d32;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .stakes ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .stake-danger li {
+            padding: 10px 0;
+            color: #d32f2f;
+            display: flex;
+            gap: 10px;
+        }
+
+        .stake-danger li::before {
+            content: "❌";
+            flex-shrink: 0;
+        }
+
+        .stake-success li {
+            padding: 10px 0;
+            color: #2e7d32;
+            display: flex;
+            gap: 10px;
+        }
+
+        .stake-success li::before {
+            content: "✅";
+            flex-shrink: 0;
+        }
+
+        .cta-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #1e3c72;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .final-message {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 3px solid #1e3c72;
+        }
+
+        .final-message p {
+            margin: 12px 0;
+            line-height: 1.8;
+            color: #333;
+            text-align: center;
+        }
+
+        .highlight-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-top: 20px !important;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .advantage-card:hover {
+                transform: none;
+            }
+        }
+
+        /* OPTIMISATION MOBILE COMPLÈTE */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 25px 15px;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+                letter-spacing: 1px;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .intro {
+                padding: 20px 15px;
+            }
+
+            .intro h2 {
+                font-size: 1.5em;
+            }
+
+            .intro p {
+                font-size: 1em;
+            }
+
+            /* Tableau comparatif en mode scroll horizontal */
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.85em;
+            }
+
+            .comparison-table thead,
+            .comparison-table tbody,
+            .comparison-table tr {
+                display: table;
+                width: 100%;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 8px;
+                font-size: 0.9em;
+            }
+
+            /* Sections WHY responsive */
+            .why-section h2 {
+                font-size: 1.6em;
+                padding: 15px;
+            }
+
+            .why-card, 
+            .solution-card, 
+            .science-card, 
+            .impact-card, 
+            .warning-card, 
+            .call-to-action-card {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+
+            .why-card h3, 
+            .solution-card h3, 
+            .science-card h3, 
+            .impact-card h3, 
+            .warning-card h3, 
+            .call-to-action-card h3 {
+                font-size: 1.3em;
+            }
+
+            .problem-statement {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .problem-item {
+                flex-direction: column;
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .problem-item .icon {
+                font-size: 1.5em;
+            }
+
+            .problem-item strong {
+                font-size: 1.05em;
+            }
+
+            .problem-item p {
+                font-size: 0.95em;
+            }
+
+            .solution-grid {
+                gap: 20px;
+            }
+
+            .solution-item {
+                padding: 20px 15px;
+            }
+
+            .solution-item h4 {
+                font-size: 1.1em;
+            }
+
+            .solution-item p {
+                font-size: 0.95em;
+            }
+
+            .example-box {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+
+            .science-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .science-point {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+
+            .impact-item {
+                flex-direction: column;
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .impact-icon {
+                font-size: 1.5em;
+            }
+
+            .impact-item strong {
+                font-size: 1.05em;
+            }
+
+            .impact-item p {
+                font-size: 0.95em;
+            }
+
+            .stakes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stake-danger, 
+            .stake-success {
+                padding: 20px 15px;
+            }
+
+            .stake-danger li, 
+            .stake-success li {
+                font-size: 0.95em;
+                padding: 8px 0;
+            }
+
+            .cta-text {
+                font-size: 1.05em;
+            }
+
+            .final-message {
+                padding: 20px 15px;
+            }
+
+            .final-message p {
+                font-size: 0.95em;
+            }
+
+            .highlight-text {
+                font-size: 1.1em;
+            }
+
+            /* Protocoles sections */
+            .protocol-section {
+                padding: 20px 15px;
+            }
+
+            .protocol-section h2 {
+                font-size: 1.6em;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .protocol-section h3 {
+                font-size: 1.3em;
+            }
+
+            .principles {
+                padding: 15px;
+            }
+
+            .principles li {
+                padding: 10px 12px;
+                font-size: 0.95em;
+            }
+
+            .example-card {
+                padding: 15px;
+                margin: 12px 0;
+            }
+
+            .example-card h4 {
+                font-size: 1.1em;
+                flex-wrap: wrap;
+            }
+
+            .wrong, .right, .explanation {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+
+            /* Situations D.O.P */
+            .situation-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .situation-card {
+                padding: 15px;
+            }
+
+            .situation-card h5 {
+                font-size: 1.05em;
+            }
+
+            .situation-card .emotion,
+            .situation-card .objective {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+
+            .situation-card .sport-example {
+                padding: 8px 10px;
+                font-size: 0.85em;
+            }
+
+            /* Avantages */
+            .advantages {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .advantage-card {
+                padding: 20px 15px;
+            }
+
+            .advantage-card h4 {
+                font-size: 1.2em;
+                flex-wrap: wrap;
+            }
+
+            .advantage-card li {
+                font-size: 0.95em;
+                padding: 6px 0;
+            }
+
+            /* Principe clé */
+            .key-principle {
+                padding: 20px 15px;
+                font-size: 1.1em;
+            }
+
+            /* Footer */
+            footer {
+                padding: 25px 15px;
+            }
+
+            footer h3 {
+                font-size: 1.3em;
+            }
+
+            footer p {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.4em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .intro h2 {
+                font-size: 1.3em;
+            }
+
+            .why-section h2 {
+                font-size: 1.4em;
+            }
+
+            .comparison-table {
+                font-size: 0.75em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 5px;
+            }
+
+            .protocol-section h2 {
+                font-size: 1.4em;
+            }
+
+            .solution-number {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Y.E.S.I CONCEPT COACHING ⚡</h1>
+            <p>Protocoles de Communication Mentale pour la Performance Sportive</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <h2>💡 Les Deux Piliers de la Communication Performante</h2>
+                <p>Découvrez les protocoles D.P² et D.O.P : deux outils complémentaires pour optimiser la préparation mentale et la gestion des situations de compétition. Ces méthodes transforment le discours négatif en communication positive et stratégique.</p>
+            </div>
+
+            <!-- Pourquoi ce concept -->
+            <div class="why-section">
+                <h2>🎓 POURQUOI CES PROTOCOLES CHANGENT TOUT</h2>
+                
+                <div class="why-card">
+                    <h3>🧠 LE PROBLÈME : Une Méconnaissance Généralisée</h3>
+                    <p class="problem-statement">
+                        La majorité des éducateurs, entraîneurs et coaches ignorent un principe fondamental : <strong>les mots que nous utilisons programment l'action future de nos athlètes.</strong>
+                    </p>
+                    <div class="problem-details">
+                        <div class="problem-item">
+                            <span class="icon">⚠️</span>
+                            <div>
+                                <strong>Le cerveau ne comprend pas la négation</strong>
+                                <p>Quand vous dites "Ne pense pas à un éléphant rose", votre cerveau doit d'abord CRÉER l'image de l'éléphant rose pour ensuite tenter de l'éviter. En sport, dire "Ne perds pas le ballon" oblige le cerveau à visualiser la perte du ballon.</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <span class="icon">🎯</span>
+                            <div>
+                                <strong>Les mots créent des prophéties auto-réalisatrices</strong>
+                                <p>"Aujourd'hui ça va être dur" installe mentalement la difficulté AVANT même que le match commence. Le joueur entre sur le terrain avec un handicap mental que VOUS avez créé par vos mots.</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <span class="icon">😤</span>
+                            <div>
+                                <strong>Vos émotions sont contagieuses</strong>
+                                <p>Quand un joueur fait une erreur, VOTRE réaction émotionnelle se transmet instantanément. Si vous paniquez, criez ou montrez de la frustration, vous amplifiez son état négatif au lieu de le recadrer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <h3>✅ LA SOLUTION : Maîtriser le Pouvoir des Mots</h3>
+                    <div class="solution-grid">
+                        <div class="solution-item">
+                            <div class="solution-number">1</div>
+                            <h4>🧘 VOUS d'abord : Maîtrisez vos émotions</h4>
+                            <p>Avant de parler à votre joueur, <strong>contrôlez VOTRE état émotionnel.</strong> Prenez 2 secondes. Respirez. Votre calme devient son calme. Votre maîtrise devient sa maîtrise.</p>
+                            <div class="example-box">
+                                <strong>Exemple :</strong> Votre attaquant rate un but immanquable → Respirez profondément → Attendez 3 secondes → Puis intervenez avec des mots positifs.
+                            </div>
+                        </div>
+
+                        <div class="solution-item">
+                            <div class="solution-number">2</div>
+                            <h4>💬 Utilisez des mots qui CONSTRUISENT l'action</h4>
+                            <p>Chaque mot doit orienter vers <strong>CE QU'IL FAUT FAIRE</strong>, jamais vers ce qu'il faut éviter. Le cerveau a besoin d'instructions positives, pas d'interdictions.</p>
+                            <div class="comparison-box">
+                                <div class="bad">❌ "Ne stress pas" → Active le stress</div>
+                                <div class="good">✅ "Reste serein" → Active la sérénité</div>
+                            </div>
+                        </div>
+
+                        <div class="solution-item">
+                            <div class="solution-number">3</div>
+                            <h4>⚡ Intervenez avec IMPACT et PRÉCISION</h4>
+                            <p><strong>3 à 6 mots maximum en situation de match.</strong> Pas de discours. Pas d'explication. Des ordres clairs qui coupent la spirale émotionnelle et relancent l'action.</p>
+                            <div class="example-box">
+                                <strong>Situation :</strong> Le joueur accumule les erreurs<br>
+                                <strong>Votre intervention :</strong> "Simplifie. Une touche."<br>
+                                <strong>Résultat :</strong> Message clair, actionnable, rassurant
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="science-card">
+                    <h3>🔬 CE QUI SE PASSE DANS LE CERVEAU</h3>
+                    <div class="science-grid">
+                        <div class="science-point">
+                            <strong>🧬 Neurosciences :</strong> Les mots activent des zones cérébrales spécifiques. Un mot négatif active l'amygdale (centre de la peur), un mot positif active le cortex préfrontal (centre de l'action planifiée).
+                        </div>
+                        <div class="science-point">
+                            <strong>⚡ Psychologie cognitive :</strong> Le cerveau traite les mots comme des commandes. "Prends les bonnes décisions" devient un programme d'action. "Ne fais pas d'erreurs" devient une obsession de l'erreur.
+                        </div>
+                        <div class="science-point">
+                            <strong>🎭 Contagion émotionnelle :</strong> Les neurones miroirs reproduisent instantanément l'état émotionnel du coach. Votre stress = leur stress. Votre calme = leur calme.
+                        </div>
+                        <div class="science-point">
+                            <strong>🎯 Effet Pygmalion :</strong> Ce que vous dites devient ce qu'ils croient. "Vous allez les étouffer" crée une croyance de domination. "Il ne faut pas perdre" crée une croyance de vulnérabilité.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <h3>💎 L'IMPACT RÉEL DE CES PROTOCOLES</h3>
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <span class="impact-icon">🚀</span>
+                            <div>
+                                <strong>Performance immédiate améliorée</strong>
+                                <p>Les joueurs entrent sur le terrain avec un état mental optimal, non parasité par des pensées négatives que VOUS auriez implantées.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🛡️</span>
+                            <div>
+                                <strong>Résilience mentale renforcée</strong>
+                                <p>Face à l'erreur, votre intervention courte et positive les recentre en 5 secondes au lieu de les enfoncer dans le doute pendant 10 minutes.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🧠</span>
+                            <div>
+                                <strong>Autonomie développée</strong>
+                                <p>En recevant des consignes positives et actionnables, les athlètes développent leur propre dialogue interne positif. Ils deviennent leurs propres coaches mentaux.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">👥</span>
+                            <div>
+                                <strong>Relation coach-athlète optimisée</strong>
+                                <p>Vous devenez la voix de la solution, pas celle du problème. Vous êtes associé à la performance, pas à la pression.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-icon">🏆</span>
+                            <div>
+                                <strong>Culture de l'excellence installée</strong>
+                                <p>Votre équipe entière adopte un langage performant. Ce qui était un discours devient une culture, une identité.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-card">
+                    <h3>⚠️ CE QUI EST EN JEU</h3>
+                    <div class="stakes">
+                        <div class="stake-danger">
+                            <strong>Sans ces protocoles :</strong>
+                            <ul>
+                                <li>Vous sabotez mentalement vos joueurs sans le savoir</li>
+                                <li>Vous amplifiez leurs erreurs par votre réaction émotionnelle</li>
+                                <li>Vous créez du stress et de la pression inutiles</li>
+                                <li>Vous limitez leur potentiel par vos mots</li>
+                                <li>Vous passez à côté de 30-40% de leurs capacités</li>
+                            </ul>
+                        </div>
+                        <div class="stake-success">
+                            <strong>Avec ces protocoles :</strong>
+                            <ul>
+                                <li>Vous libérez le potentiel de vos athlètes par vos mots</li>
+                                <li>Vous devenez un multiplicateur de performance</li>
+                                <li>Vous créez de la confiance et de la sérénité</li>
+                                <li>Vous maximisez leurs capacités mentales</li>
+                                <li>Vous accédez aux 30-40% de performance mentale inexploitée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="call-to-action-card">
+                    <h3>🎯 VOTRE RESPONSABILITÉ EN TANT QU'ÉDUCATEUR</h3>
+                    <p class="cta-text">
+                        Vos mots sont des outils. Ils peuvent construire ou détruire. Motiver ou paralyser. Libérer ou limiter.
+                    </p>
+                    <p class="cta-text">
+                        <strong>Ces protocoles ne sont pas une option, ils sont une NÉCESSITÉ</strong> pour tout éducateur qui veut réellement servir la performance de ses athlètes.
+                    </p>
+                    <div class="final-message">
+                        <p><strong>Conservez précieusement ces outils.</strong></p>
+                        <p>Entraînez-vous à les utiliser quotidiennement jusqu'à ce qu'ils deviennent automatiques.</p>
+                        <p>Car le jour où vous aurez besoin d'eux - dans les moments de pression, d'erreur, de doute - il sera trop tard pour les apprendre.</p>
+                        <p class="highlight-text">💪 Maîtrisez-les MAINTENANT. Vos athlètes méritent la meilleure version de vous.</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Critère</th>
+                        <th>D.P² - Discours Principal Positif</th>
+                        <th>D.O.P - Discours Opportun Positif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🎯 Moment d'utilisation</strong></td>
+                        <td>AVANT le match / la compétition</td>
+                        <td>PENDANT le match / la compétition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎪 Contexte</strong></td>
+                        <td>Vestiaire, causerie d'avant-match, briefing tactique</td>
+                        <td>En direct, pendant l'action, temps mort, coaching live</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🧠 Objectif principal</strong></td>
+                        <td>Installer un état mental optimal AVANT la performance</td>
+                        <td>Recadrer immédiatement une situation émotionnelle EN COURS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⏱️ Durée</strong></td>
+                        <td>Discours structuré (2-10 minutes)</td>
+                        <td>Messages ultra-courts (3-6 mots maximum)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📝 Format</strong></td>
+                        <td>Transformations négatives → positives préparées à l'avance</td>
+                        <td>Phrases d'impact adaptées à la situation émotionnelle</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎨 Style</strong></td>
+                        <td>Préventif, anticipatif, motivationnel</td>
+                        <td>Réactif, correctif, recadrant</td>
+                    </tr>
+                    <tr>
+                        <td><strong>👥 Cible</strong></td>
+                        <td>Toute l'équipe / le groupe</td>
+                        <td>Individuel ou collectif selon la situation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🔧 Fonction</strong></td>
+                        <td>Prévenir les schémas mentaux négatifs</td>
+                        <td>Interrompre une spirale négative en cours</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Section D.P² -->
+            <div class="protocol-section">
+                <h2>📋 D.P² - DISCOURS PRINCIPAL POSITIF</h2>
+                <p style="font-size: 1.1em; color: #555; margin-bottom: 20px;">
+                    <strong>Protocole de communication d'avant-match</strong> - Transformer le négatif en positif pour l'équipe
+                </p>
+
+                <div class="principles">
+                    <h3>Les 5 Principes Fondamentaux</h3>
+                    <ul>
+                        <li><strong>Faciliter</strong> plutôt que compliquer</li>
+                        <li><strong>Valoriser</strong> les capacités plutôt que pointer les manques</li>
+                        <li><strong>Orienter vers l'action</strong> plutôt que l'évitement</li>
+                        <li><strong>Créer de la confiance</strong> plutôt que générer du doute</li>
+                        <li><strong>Donner du contrôle</strong> plutôt que subir la situation</li>
+                    </ul>
+                </div>
+
+                <h3>📚 Exemples de Transformations</h3>
+
+                <div class="example-card">
+                    <h4>🎯 Difficulté de la tâche</h4>
+                    <div class="wrong">❌ "Aujourd'hui ça va être dur..."</div>
+                    <div class="right">✅ "Aujourd'hui on va se faciliter les choses."</div>
+                    <div class="explanation">💡 On passe d'une anticipation négative à une intention d'action. Le cerveau se projette sur des solutions plutôt que sur l'obstacle.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>⚡ Qualité de l'adversaire</h4>
+                    <div class="wrong">❌ "Ils sont forts, il ne faut pas les laisser jouer..."</div>
+                    <div class="right">✅ "On va imposer notre jeu dès le début."</div>
+                    <div class="explanation">💡 On oriente vers NOTRE plan plutôt que de subir le leur. L'équipe se concentre sur ce qu'elle contrôle.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🛡️ Défense / Protection</h4>
+                    <div class="wrong">❌ "Surtout ne perdez pas le ballon bêtement..."</div>
+                    <div class="right">✅ "Prenez les bonnes décisions avec le ballon."</div>
+                    <div class="explanation">💡 Le cerveau capte "bonnes décisions" au lieu de "perdre bêtement". On crée de la confiance dans le choix.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>😰 Gestion du stress</h4>
+                    <div class="wrong">❌ "Ne stressez pas, il ne faut pas paniquer..."</div>
+                    <div class="right">✅ "Restez sereins, jouez votre jeu."</div>
+                    <div class="explanation">💡 "Ne stressez pas" active le stress. "Restez sereins" active la sérénité. Même intention, impact inversé.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>⚠️ Erreurs à éviter</h4>
+                    <div class="wrong">❌ "Attention à ne pas faire les mêmes erreurs que la dernière fois..."</div>
+                    <div class="right">✅ "Appliquez ce qu'on a travaillé cette semaine."</div>
+                    <div class="explanation">💡 On ancre les corrections récentes plutôt que de raviver les échecs passés. Orientation vers le progrès.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🏆 Enjeu du match</h4>
+                    <div class="wrong">❌ "On ne peut pas se permettre de perdre ce match..."</div>
+                    <div class="right">✅ "On va prendre ce match, c'est l'occasion de montrer ce qu'on vaut."</div>
+                    <div class="explanation">💡 On transforme la peur de perdre en désir de gagner. Changement de dynamique émotionnelle.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>💪 Capacités de l'équipe</h4>
+                    <div class="wrong">❌ "Si vous n'êtes pas concentrés, on va se faire écraser..."</div>
+                    <div class="right">✅ "Concentration maximale, on va les étouffer dès le coup d'envoi."</div>
+                    <div class="explanation">💡 On donne un plan d'action positif au lieu d'une menace. L'équipe se projette en position de force.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🔥 Intensité / Engagement</h4>
+                    <div class="wrong">❌ "Il ne faut pas être mous, pas de relâchement..."</div>
+                    <div class="right">✅ "On va être affûtés, intensité haute du début à la fin."</div>
+                    <div class="explanation">💡 "Affûtés" et "intensité haute" créent une image d'engagement actif plutôt qu'éviter la mollesse.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🎲 Incertitude du résultat</h4>
+                    <div class="wrong">❌ "On ne sait jamais ce qui peut se passer..."</div>
+                    <div class="right">✅ "On va créer notre match, c'est nous qui décidons."</div>
+                    <div class="explanation">💡 On retire l'incertitude anxiogène pour donner un sentiment de contrôle et d'agentivité.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🧠 Cohésion collective</h4>
+                    <div class="wrong">❌ "J'espère que vous ne jouerez pas chacun dans votre coin..."</div>
+                    <div class="right">✅ "On joue ensemble, chaque action collective nous rapproche de la victoire."</div>
+                    <div class="explanation">💡 On renforce l'unité positivement plutôt que de craindre la division. "Ensemble" + "victoire" = boost collectif.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>⏱️ Gestion du temps</h4>
+                    <div class="wrong">❌ "Ne baissez pas la garde en fin de match..."</div>
+                    <div class="right">✅ "On finit fort, jusqu'au coup de sifflet final."</div>
+                    <div class="explanation">💡 "Finir fort" crée une vision d'engagement actif plutôt que la menace du relâchement.</div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🎯 Objectif du match</h4>
+                    <div class="wrong">❌ "Évitez de reproduire la défaite de la semaine dernière..."</div>
+                    <div class="right">✅ "Aujourd'hui on lance une nouvelle série, on repart sur de bonnes bases."</div>
+                    <div class="explanation">💡 Tourner la page mentalement et créer une dynamique de renouveau plutôt que traîner le poids du passé.</div>
+                </div>
+            </div>
+
+            <!-- Section D.O.P -->
+            <div class="protocol-section">
+                <h2>⚡ D.O.P - DISCOURS OPPORTUN POSITIF</h2>
+                <p style="font-size: 1.1em; color: #555; margin-bottom: 20px;">
+                    <strong>Communication stratégique en situation de compétition</strong> - Interventions courtes et percutantes
+                </p>
+
+                <h3>📊 Les 6 Situations de Communication</h3>
+
+                <div class="situation-grid">
+                    <div class="situation-card">
+                        <h5>1️⃣ ERREUR IMMÉDIATE</h5>
+                        <div class="emotion">État émotionnel : Frustration, colère, rumination</div>
+                        <div class="objective">Objectif : Couper l'émotion négative et relancer l'action</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "C'est fait. Replace-toi. Tu redemandes."</div>
+                            <div class="sport-example">🎾 Tennis : "Respire. Point suivant. Joue la zone."</div>
+                            <div class="sport-example">🥊 Boxe : "Garde haute. Respire. On repart."</div>
+                        </div>
+                    </div>
+
+                    <div class="situation-card">
+                        <h5>2️⃣ ACCUMULATION D'ERREURS</h5>
+                        <div class="emotion">État émotionnel : Doute, perte de confiance</div>
+                        <div class="objective">Objectif : Rassurer sans déresponsabiliser</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "Simplifie. Une touche si besoin."</div>
+                            <div class="sport-example">🎾 Tennis : "Ralentis. Routine. Engagement plein."</div>
+                            <div class="sport-example">🥊 Boxe : "Cadence posée. Tu choisis tes coups."</div>
+                        </div>
+                    </div>
+
+                    <div class="situation-card">
+                        <h5>3️⃣ TEMPS FAIBLE COLLECTIF</h5>
+                        <div class="emotion">État émotionnel : Stress, confusion</div>
+                        <div class="objective">Objectif : Redonner du contrôle et de la clarté</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "Bloc compact. Une action à la fois."</div>
+                            <div class="sport-example">🎾 Tennis : "Schéma simple. Joue long si besoin."</div>
+                            <div class="sport-example">🥊 Boxe : "Déplacements courts. Propre."</div>
+                        </div>
+                    </div>
+
+                    <div class="situation-card">
+                        <h5>4️⃣ PRESSION ADVERSE FORTE</h5>
+                        <div class="emotion">État émotionnel : Tension, précipitation</div>
+                        <div class="objective">Objectif : Stabiliser et recentrer</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "Calme. Fixe, puis joue."</div>
+                            <div class="sport-example">🎾 Tennis : "Respiration. Même plan."</div>
+                            <div class="sport-example">🥊 Boxe : "Tu vois. Tu contrôles."</div>
+                        </div>
+                    </div>
+
+                    <div class="situation-card">
+                        <h5>5️⃣ TEMPS FORT INDIVIDUEL</h5>
+                        <div class="emotion">État émotionnel : Excitation, euphorie</div>
+                        <div class="objective">Objectif : Maintenir lucidité et rigueur</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "Même intensité. Même exigence."</div>
+                            <div class="sport-example">🎾 Tennis : "Même routine. Rien ne change."</div>
+                            <div class="sport-example">🥊 Boxe : "Patient. Propre. Contrôle."</div>
+                        </div>
+                    </div>
+
+                    <div class="situation-card">
+                        <h5>6️⃣ MOMENT CLÉ (FIN)</h5>
+                        <div class="emotion">État émotionnel : Pression maximale</div>
+                        <div class="objective">Objectif : Sécuriser mentalement</div>
+                        <div class="examples">
+                            <div class="sport-example">⚽ Football : "Fais simple. Confiance."</div>
+                            <div class="sport-example">🎾 Tennis : "Respire. Engage."</div>
+                            <div class="sport-example">🥊 Boxe : "Calme. Lucide. Présent."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avantages -->
+            <h2 style="color: #1e3c72; font-size: 2em; margin: 40px 0 20px 0; text-align: center;">
+                🎯 Avantages des Protocoles
+            </h2>
+
+            <div class="advantages">
+                <div class="advantage-card">
+                    <h4>🧠 D.P² - Avantages</h4>
+                    <ul>
+                        <li>Crée un état mental optimal avant la performance</li>
+                        <li>Prévient les schémas de pensée négatifs</li>
+                        <li>Renforce la confiance collective</li>
+                        <li>Oriente vers l'action et le contrôle</li>
+                        <li>Facilite la projection positive</li>
+                        <li>Réduit l'anxiété pré-compétitive</li>
+                        <li>Unifie le groupe autour d'un discours positif</li>
+                    </ul>
+                </div>
+
+                <div class="advantage-card">
+                    <h4>⚡ D.O.P - Avantages</h4>
+                    <ul>
+                        <li>Intervention immédiate en situation de crise</li>
+                        <li>Messages courts et percutants</li>
+                        <li>Coupe les spirales émotionnelles négatives</li>
+                        <li>Recentre l'attention sur l'essentiel</li>
+                        <li>Adaptable à toutes les situations de jeu</li>
+                        <li>Maintient la lucidité sous pression</li>
+                        <li>Facilite le retour au processus</li>
+                    </ul>
+                </div>
+
+                <div class="advantage-card">
+                    <h4>🔄 Complémentarité</h4>
+                    <ul>
+                        <li>Couverture complète : avant + pendant la compétition</li>
+                        <li>Cohérence du discours sur toute la performance</li>
+                        <li>Prévention (D.P²) + Intervention (D.O.P)</li>
+                        <li>Renforce l'efficacité globale du coaching</li>
+                        <li>S'adapte aux différentes phases émotionnelles</li>
+                        <li>Crée une culture de communication positive</li>
+                        <li>Optimise la préparation mentale globale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-principle">
+                💡 Le cerveau retient ce qu'on lui dit de faire, pas ce qu'on lui dit d'éviter
+            </div>
+        </div>
+
+        <footer>
+            <h3>Y.E.S.I CONCEPT COACHING</h3>
+            <p>Préparation Mentale • Performance • Excellence Sportive</p>
+            <p>📧 yesiconcept.rdv@gmail.com</p>
+            <p>📱 +33 6 XX XX XX XX</p>
+        </footer>
+    </div>
+</body>
+</html>

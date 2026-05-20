@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Langage de la Performance - Y.E.S.I CONCEPT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f4f4;
+    color:#111;
+    line-height:1.6;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.logo{
+    font-size:20px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    font-weight:600;
+    color:#4aa3ff;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:70px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:24px;
+    font-weight:300;
+    margin-bottom:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 40px;
+    background:#4aa3ff;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1f7fe0;
+    transform:translateY(-2px);
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:52px;
+    margin-bottom:30px;
+    color:#111;
+}
+
+.section-subtitle{
+    font-size:22px;
+    color:#555;
+    margin-bottom:50px;
+    max-width:900px;
+}
+
+.dark{
+    background:#071529;
+    color:white;
+}
+
+.dark .section-title,
+.dark .section-subtitle{
+    color:white;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:#444;
+}
+
+.dark .card{
+    background:#10213b;
+    color:white;
+}
+
+.dark .card p{
+    color:#d8d8d8;
+}
+
+.principles{
+    display:grid;
+    gap:25px;
+    margin-top:40px;
+}
+
+.principle{
+    background:white;
+    padding:25px;
+    border-left:6px solid #4aa3ff;
+    border-radius:12px;
+    font-size:22px;
+    font-weight:500;
+}
+
+.quote{
+    text-align:center;
+    font-size:54px;
+    font-family:'Playfair Display',serif;
+    line-height:1.3;
+    max-width:1100px;
+    margin:auto;
+}
+
+.cta{
+    text-align:center;
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    font-size:22px;
+    margin-bottom:40px;
+}
+
+.footer{
+    background:#020b18;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .quote{
+        font-size:34px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="logo">
+            Y.E.S.I CONCEPT
+        </div>
+
+        <h1>Le Langage de la Performance</h1>
+
+        <p>
+            Comment les mots du coach façonnent la victoire.
+        </p>
+
+        <a href="#" class="btn">
+            ACCÉDER À LA FORMATION
+        </a>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Vos mots sont votre outil le plus puissant.
+    </h2>
+
+    <p class="section-subtitle">
+        Le discours d’un coach n’est pas qu’une simple consigne. 
+        C’est un levier de performance capable de construire la confiance, 
+        d’orienter l’action et de sécuriser mentalement les athlètes 
+        dans les moments cruciaux.
+    </p>
+
+    <p class="section-subtitle">
+        Y.E.S.I CONCEPT a développé une méthodologie pour maîtriser ce levier. 
+        Nous transformons la communication intuitive en une compétence stratégique et délibérée.
+    </p>
+
+</section>
+
+<section class="dark">
+
+    <h2 class="section-title">
+        Deux moments. Deux outils.
+    </h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <h3>PARTIE 1 : Avant la compétition</h3>
+
+            <p>
+                Maîtriser le discours pour bâtir la confiance et la clarté.
+            </p>
+
+            <br>
+
+            <strong>Le Discours Principal Positif (D.P²)</strong>
+
+        </div>
+
+        <div class="card">
+
+            <h3>PARTIE 2 : Pendant la compétition</h3>
+
+            <p>
+                Intervenir avec précision pour maintenir le cap.
+            </p>
+
+            <br>
+
+            <strong>Le Discours Opportun Positif (D.O.P)</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Le Discours Principal Positif (D.P²)
+    </h2>
+
+    <p class="section-subtitle">
+        Protocole de communication pour transformer le négatif 
+        en positif pour l’équipe.
+    </p>
+
+    <p class="section-subtitle">
+        L’objectif du D.P² est de construire un cadre mental optimal avant même le début de l’épreuve. 
+        Il s’agit d’ancrer des intentions positives et de donner aux athlètes un sentiment de contrôle.
+    </p>
+
+    <div class="principles">
+
+        <div class="principle">
+            ✔ Faciliter plutôt que compliquer.
+        </div>
+
+        <div class="principle">
+            ✔ Valoriser les capacités plutôt que pointer les manques.
+        </div>
+
+        <div class="principle">
+            ✔ Orienter vers l’action plutôt que l’évitement.
+        </div>
+
+        <div class="principle">
+            ✔ Créer de la confiance plutôt que générer du doute.
+        </div>
+
+        <div class="principle">
+            ✔ Donner du contrôle plutôt que subir la situation.
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dark">
+
+    <h2 class="section-title">
+        Applications concrètes du D.P²
+    </h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+            <h3>Transformer la pression en contrôle</h3>
+
+            <p>
+                ❌ « Ne stressez pas »
+            </p>
+
+            <br>
+
+            <p>
+                ✅ « Restez sereins, jouez votre jeu. »
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Orienter l’équipe vers l’action</h3>
+
+            <p>
+                ❌ « Attention à ne pas refaire les mêmes erreurs »
+            </p>
+
+            <br>
+
+            <p>
+                ✅ « Appliquez ce qu’on a travaillé cette semaine. »
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Renforcer la confiance</h3>
+
+            <p>
+                ❌ « Surtout ne perdez pas le ballon »
+            </p>
+
+            <br>
+
+            <p>
+                ✅ « Prenez les bonnes décisions avec le ballon. »
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Créer de la cohésion</h3>
+
+            <p>
+                ❌ « J’espère que vous ne jouerez pas chacun dans votre coin »
+            </p>
+
+            <br>
+
+            <p>
+                ✅ « On joue ensemble, chaque action collective nous rapproche de la victoire. »
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Le Discours Opportun Positif (D.O.P)
+    </h2>
+
+    <p class="section-subtitle">
+        Communication stratégique en situation de compétition.
+    </p>
+
+    <p class="section-subtitle">
+        Le D.O.P est une intervention brève et ciblée pour répondre à une situation spécifique. 
+        L’objectif est de couper une dynamique négative, de rassurer, 
+        ou de maintenir la lucidité en temps réel.
+    </p>
+
+</section>
+
+<section class="dark">
+
+    <h2 class="section-title">
+        Gérer les moments négatifs
+    </h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <h3>Erreur immédiate</h3>
+
+            <p>
+                « C’est fait. Replace-toi. Tu redemandes. »
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Accumulation d’erreurs</h3>
+
+            <p>
+                « Simplifie. Une touche si besoin. »
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Temps faible collectif</h3>
+
+            <p>
+                « Bloc compact. Une action à la fois. »
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Pression adverse forte</h3>
+
+            <p>
+                « Calme. Fixe puis joue. »
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">
+        Gérer les moments clés
+    </h2>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <h3>Temps fort individuel</h3>
+
+            <p>
+                « Même intensité. Même exigence. »
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Moment clé de fin de match</h3>
+
+            <p>
+                « Fais simple. Confiance. »
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="dark">
+
+    <div class="quote">
+        « Le cerveau retient ce qu’on lui dit de faire,
+        pas ce qu’on lui dit d’éviter. »
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>
+        Prêt à maîtriser le langage de la performance ?
+    </h2>
+
+    <p>
+        Une méthodologie Y.E.S.I CONCEPT pensée pour les entraîneurs,
+        éducateurs et préparateurs qui veulent impacter avec précision.
+    </p>
+
+    <a href="#" class="btn">
+        REJOINDRE LA FORMATION
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <p>
+        Y.E.S.I CONCEPT
+    </p>
+
+    <p>
+        Préparation Mentale • Performance • Excellence Sportive
+    </p>
+
+    <p>
+        yesiconcept.rdv@gmail.com
+    </p>
+
+    <p>
+        07 63 58 77 83
+    </p>
+
+</footer>
+
+</body>
+</html>

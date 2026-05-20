@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandre & Mody U17 — Y.E.S.I CONCEPT</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8922A;
+    --gold-light: #D4A843;
+    --navy: #0D1B3E;
+    --navy-mid: #1a2d5a;
+    --navy-light: #2563a8;
+    --red: #C0392B;
+    --red-light: #E74C3C;
+    --green: #1A6B3A;
+    --green-light: #219653;
+    --bg: #F7F7F5;
+    --bg2: #EEECEA;
+    --ink: #111827;
+    --ink2: #374151;
+    --muted: #6B7280;
+    --border: #E5E2DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background: rgba(247,247,245,0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+  }
+  nav .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--navy);
+  }
+  nav .nav-dots { display: flex; gap: 7px; }
+  nav .nav-dots a {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid var(--navy-light);
+    display: block;
+    cursor: pointer;
+    transition: background 0.25s;
+    text-decoration: none;
+  }
+  nav .nav-dots a:hover, nav .nav-dots a.active { background: var(--navy-light); }
+
+  /* SLIDES */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .slide:nth-child(even) { background: #fff; }
+
+  .section-num {
+    position: absolute;
+    top: 90px; left: 48px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: rgba(13,27,62,0.04);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .slide-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 52px);
+    letter-spacing: 1.5px;
+    margin-bottom: 44px;
+    text-align: center;
+    color: var(--navy);
+    position: relative;
+  }
+  .slide-title::after {
+    content: '';
+    display: block;
+    width: 48px; height: 3px;
+    background: var(--gold);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+  .slide-title.red::after  { background: var(--red); }
+  .slide-title.green::after{ background: var(--green-light); }
+  .slide-title.navy::after { background: var(--navy-light); }
+
+  /* ─── SLIDE 1 — COVER ─── */
+  .slide-cover {
+    background: var(--navy) !important;
+    overflow: hidden;
+  }
+  .pitch-bg {
+    position: absolute; inset: 0;
+    opacity: 0.07;
+    pointer-events: none;
+  }
+  .cover-tag {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 20px;
+  }
+  .cover-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 10vw, 130px);
+    line-height: 0.9;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 22px;
+  }
+  .cover-title span { color: var(--gold-light); }
+  .cover-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1px;
+    margin-bottom: 36px;
+  }
+  .cover-badge {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 7px 22px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    border-radius: 2px;
+  }
+
+  /* ─── SLIDE 2 — DIAGNOSTIC ─── */
+  .slide-diag { background: #fff !important; }
+
+  .diag-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 960px;
+    width: 100%;
+  }
+
+  /* Carte Coach */
+  .coach-card {
+    background: #FFF5F5;
+    border: 1.5px solid rgba(192,57,43,0.2);
+    border-radius: 6px;
+    padding: 32px 28px;
+  }
+  .coach-card .card-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(192,57,43,0.12);
+  }
+  .card-icon { font-size: 32px; }
+  .card-head-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--navy);
+  }
+  .card-head-role { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+  .diag-row {
+    display: flex; gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .diag-label { color: var(--muted); width: 100px; flex-shrink: 0; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding-top: 1px; }
+  .diag-val { color: var(--ink2); }
+  .diag-val.accent-red { color: var(--red); font-weight: 700; }
+
+  /* Carte Joueur */
+  .player-card {
+    background: #F0F4FF;
+    border: 1.5px solid rgba(37,99,168,0.2);
+    border-radius: 6px;
+    padding: 32px 28px;
+  }
+  .player-card .card-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(37,99,168,0.12);
+  }
+  .diag-val.accent-blue { color: var(--navy-light); font-weight: 700; }
+
+  /* Insight central — pleine largeur */
+  .diag-insight {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    border-radius: 6px;
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #fff;
+  }
+  .insight-icon-wrap {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .insight-text { font-size: 15px; line-height: 1.7; }
+  .insight-text strong { color: var(--gold-light); }
+
+  /* ─── SLIDE 3 — ACTE I ─── */
+  .slide-acte1 { background: var(--bg) !important; }
+  .match-header {
+    background: var(--red);
+    padding: 16px 36px;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    max-width: 680px;
+    width: 100%;
+  }
+  .match-header p { font-size: 12px; color: rgba(255,255,255,0.75); letter-spacing: 1px; margin-bottom: 4px; }
+  .match-header strong { font-size: 15px; color: #fff; letter-spacing: 1.5px; }
+  .burst-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .burst {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    border-radius: 4px;
+    padding: 22px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink2);
+    position: relative;
+  }
+  .burst .burst-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ─── SLIDE 4 — SCIENCE ─── */
+  .slide-science { background: #fff !important; }
+  .science-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 740px;
+    width: 100%;
+  }
+  .neg-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+  .neg-pill {
+    background: rgba(192,57,43,0.1);
+    border: 2px solid rgba(192,57,43,0.35);
+    color: var(--red);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    border-radius: 4px;
+  }
+  .neg-arrow { font-size: 22px; color: var(--muted); }
+  .brain-pill {
+    background: rgba(13,27,62,0.07);
+    border: 1.5px solid rgba(13,27,62,0.15);
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .neg-ignored {
+    font-size: 12px;
+    color: rgba(107,114,128,0.5);
+    font-style: italic;
+    text-decoration: line-through;
+  }
+  .neuro-note {
+    background: var(--bg2);
+    border-left: 3px solid var(--navy-light);
+    padding: 16px 22px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--ink2);
+    border-radius: 0 4px 4px 0;
+    width: 100%;
+  }
+  .neuro-note strong { color: var(--navy); }
+  .result-pill {
+    background: var(--navy);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  /* ─── SLIDE 5 — BASCULE ─── */
+  .slide-bascule { background: var(--bg) !important; }
+  .arrow-row {
+    display: flex;
+    gap: 4px;
+    max-width: 840px;
+    width: 100%;
+    margin-bottom: 32px;
+    align-items: stretch;
+  }
+  .arrow-blk {
+    flex: 1;
+    padding: 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 4px;
+  }
+  .arrow-blk.red-blk { background: #FFF0EE; border: 1.5px solid rgba(192,57,43,0.2); }
+  .arrow-blk.green-blk { background: #EDF7F1; border: 1.5px solid rgba(33,150,83,0.2); }
+  .arrow-blk h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  .arrow-blk.red-blk h3 { color: var(--red); }
+  .arrow-blk.green-blk h3 { color: var(--green-light); }
+  .arrow-blk p { font-size: 12px; color: var(--muted); }
+  .arrow-sep {
+    display: flex; align-items: center;
+    color: var(--muted);
+    font-size: 28px;
+    padding: 0 4px;
+  }
+  .bascule-desc {
+    max-width: 700px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 18px 26px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--ink2);
+    border-radius: 0 4px 4px 0;
+  }
+  .bascule-desc strong { color: var(--navy); }
+
+  /* ─── SLIDE 6 — ARSENAL ─── */
+  .slide-arsenal { background: #fff !important; }
+  .pillars-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 920px;
+    width: 100%;
+  }
+  .pillar {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--green-light);
+    border-radius: 4px;
+    padding: 28px 22px;
+    display: flex; flex-direction: column; gap: 12px;
+    align-items: flex-start;
+  }
+  .pillar-icon { font-size: 30px; }
+  .pillar h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    color: var(--green-light);
+  }
+  .pillar p { font-size: 13px; line-height: 1.7; color: var(--ink2); }
+
+  /* ─── SLIDE 7 — ACTE II ─── */
+  .slide-acte2 { background: var(--bg) !important; }
+  .match-header.green {
+    background: var(--green-light);
+  }
+  .bubble-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .speech-bubble {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-bottom: 3px solid var(--green-light);
+    border-radius: 8px 8px 8px 2px;
+    padding: 20px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.7;
+    color: var(--ink2);
+  }
+  .speech-bubble em { color: var(--green-light); font-style: normal; }
+
+  /* ─── SLIDE 8 — D.O.P ─── */
+  .slide-dop { background: #fff !important; }
+  .match-bar {
+    width: 100%; max-width: 840px;
+    height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 44px;
+  }
+  .match-bar::before { content: "0'"; position: absolute; left: 0; top: 10px; font-size: 11px; color: var(--muted); }
+  .match-bar::after  { content: "90'"; position: absolute; right: 0; top: 10px; font-size: 11px; color: var(--muted); }
+  .match-bar-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--navy-light), var(--green-light));
+    border-radius: 3px;
+  }
+  .dop-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 840px;
+    width: 100%;
+  }
+  .dop-moment {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy-light);
+    border-radius: 4px;
+    padding: 22px 18px;
+    position: relative;
+  }
+  .dop-moment::before {
+    content: '';
+    position: absolute;
+    top: -18px; left: 50%;
+    transform: translateX(-50%);
+    width: 2px; height: 16px;
+    background: var(--navy-light);
+  }
+  .dop-situation { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 700; }
+  .dop-phrase { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; color: var(--navy); line-height: 1.4; }
+  .dop-footer {
+    max-width: 840px;
+    width: 100%;
+    margin-top: 24px;
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  /* ─── SLIDE 9 — MATRICE ─── */
+  .slide-matrice { background: var(--bg) !important; }
+  .matrix-table {
+    max-width: 840px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .matrix-table th {
+    padding: 14px 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+  .matrix-table th:first-child { text-align: left; background: var(--navy); color: rgba(255,255,255,0.6); }
+  .matrix-table th.th-red { background: var(--red); color: #fff; }
+  .matrix-table th.th-green { background: var(--green-light); color: #fff; }
+  .matrix-table td {
+    padding: 16px 22px;
+    border-top: 1px solid var(--border);
+    line-height: 1.6;
+    text-align: center;
+  }
+  .matrix-table td:first-child { text-align: left; color: var(--muted); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; background: rgba(13,27,62,0.03); }
+  .matrix-table td.td-red { color: var(--red); background: #FFF5F5; font-style: italic; }
+  .matrix-table td.td-green { color: var(--green-light); background: #EDF7F1; font-weight: 700; }
+
+  /* ─── SLIDE 10 — CLOSING ─── */
+  .slide-close { background: var(--navy) !important; text-align: center; }
+  .close-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6.5vw, 82px);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    color: #fff;
+    max-width: 780px;
+    margin-bottom: 28px;
+  }
+  .close-headline span { color: var(--gold-light); }
+  .close-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 600px;
+    line-height: 1.9;
+    margin-bottom: 44px;
+  }
+  .yesi-stamp { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 4px; color: var(--gold); margin-bottom: 10px; }
+  .close-contact { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
+  .close-contact a { color: var(--gold-light); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .slide { padding: 80px 20px 40px; }
+    nav { padding: 12px 20px; }
+    .diag-layout, .burst-grid, .pillars-row, .bubble-grid, .dop-timeline { grid-template-columns: 1fr; }
+    .diag-insight { flex-direction: column; text-align: center; }
+    .arrow-row { flex-direction: column; }
+    .arrow-sep { display: none; }
+    .section-num { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Y.E.S.I CONCEPT</div>
+  <div class="nav-dots">
+    <a href="#s1"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a>
+    <a href="#s6"></a><a href="#s7"></a><a href="#s8"></a><a href="#s9"></a><a href="#s10"></a>
+  </div>
+</nav>
+
+<!-- 1 — COVER -->
+<section class="slide slide-cover" id="s1">
+  <svg class="pitch-bg" viewBox="0 0 1440 900" fill="none" stroke="#fff" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+    <rect x="80" y="60" width="1280" height="780"/>
+    <line x1="720" y1="60" x2="720" y2="840"/>
+    <circle cx="720" cy="450" r="120"/>
+    <circle cx="720" cy="450" r="5" fill="#fff"/>
+    <rect x="80" y="290" width="175" height="320"/>
+    <rect x="80" y="360" width="75" height="180"/>
+    <rect x="1185" y="290" width="175" height="320"/>
+    <rect x="1285" y="360" width="75" height="180"/>
+  </svg>
+  <p class="cover-tag">Étude de Cas · Y.E.S.I CONCEPT Coaching</p>
+  <h1 class="cover-title">Alexandre<br><span>&</span> Mody<br>(U17)</h1>
+  <p class="cover-sub">La Communication comme Levier de Performance.</p>
+  <div class="cover-badge">Expertise Y.E.S.I CONCEPT Coaching</div>
+</section>
+
+<!-- 2 — DIAGNOSTIC -->
+<section class="slide slide-diag" id="s2">
+  <span class="section-num">01</span>
+  <h2 class="slide-title red">Le Diagnostic : Le perfectionnisme comme frein à la créativité</h2>
+  <div class="diag-layout">
+
+    <div class="coach-card">
+      <div class="card-head">
+        <div class="card-icon">📋</div>
+        <div>
+          <div class="card-head-name">Alexandre</div>
+          <div class="card-head-role">Entraîneur · U17 Régional</div>
+        </div>
+      </div>
+      <div class="diag-row"><span class="diag-label">Trait dominant</span><span class="diag-val">Perfectionnisme</span></div>
+      <div class="diag-row"><span class="diag-label">Symptôme</span><span class="diag-val accent-red">Saturation d'informations négatives.</span></div>
+    </div>
+
+    <div class="player-card">
+      <div class="card-head">
+        <div class="card-icon">👕</div>
+        <div>
+          <div class="card-head-name">Mody</div>
+          <div class="card-head-role">Milieu axial · U17 Régional</div>
+        </div>
+      </div>
+      <div class="diag-row"><span class="diag-label">Trait dominant</span><span class="diag-val">Créativité</span></div>
+      <div class="diag-row"><span class="diag-label">Symptôme</span><span class="diag-val accent-blue">Talent bridé par des consignes restrictives ("Ne fais pas").</span></div>
+    </div>
+
+    <div class="diag-insight">
+      <div class="insight-icon-wrap">⚡</div>
+      <p class="insight-text">
+        Alexandre veut tellement bien faire qu'il <strong>paralyse le jeu</strong> de son meilleur milieu de terrain par <strong>excès d'interdictions</strong> — un perfectionnisme qui se retourne contre la performance.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3 — ACTE I -->
+<section class="slide slide-acte1" id="s3">
+  <span class="section-num">02</span>
+  <h2 class="slide-title red">Acte I : La Paralysie par l'Analyse</h2>
+  <div class="match-header">
+    <p>Match vs Sarcelles (Championnat)</p>
+    <strong>RÉSULTAT : DÉFAITE 0 – 2 (Équipe sans âme)</strong>
+  </div>
+  <div class="burst-grid">
+    <div class="burst">
+      <div class="burst-label">Consigne collective</div>
+      "Surtout ne perdez pas le ballon dans l'axe, sinon on se fait contrer."
+    </div>
+    <div class="burst">
+      <div class="burst-label">Consigne individuelle</div>
+      "Mody, arrête de forcer tes passes, joue simple, ne prends aucun risque !"
+    </div>
+    <div class="burst">
+      <div class="burst-label">Gestion de l'adversité</div>
+      "Si on encaisse, ne baissez pas les bras comme d'habitude."
+    </div>
+  </div>
+</section>
+
+<!-- 4 — SCIENCE -->
+<section class="slide slide-science" id="s4">
+  <span class="section-num">03</span>
+  <h2 class="slide-title navy">La Science de l'Échec : Le piège neurologique de la négation</h2>
+  <div class="science-wrap">
+    <div class="neg-row">
+      <div class="neg-pill">PERDRE</div>
+      <div class="neg-arrow">+</div>
+      <div class="neg-pill">RISQUES</div>
+      <div class="neg-arrow">→</div>
+      <div class="brain-pill">🧠 Cerveau</div>
+      <div class="neg-arrow" style="opacity:.3">···</div>
+      <div class="neg-ignored">« NE PAS »</div>
+    </div>
+    <div class="neuro-note">
+      <strong>Conséquence neuronale :</strong> Le cerveau de Mody traite « Perdre le ballon » et « Prendre des risques » avant la négation.
+    </div>
+    <div class="result-pill">
+      Il joue avec la peur, manque d'audace et finit par rater des passes faciles par excès de prudence.
+    </div>
+  </div>
+</section>
+
+<!-- 5 — BASCULE -->
+<section class="slide slide-bascule" id="s5">
+  <span class="section-num">04</span>
+  <h2 class="slide-title">Le Point de Bascule : L'Intervention Y.E.S.I CONCEPT</h2>
+  <div class="arrow-row">
+    <div class="arrow-blk red-blk">
+      <h3>Du Coach « Censeur »…</h3>
+      <p>Interdictions · Négations · Peur de l'erreur</p>
+    </div>
+    <div class="arrow-sep">→</div>
+    <div class="arrow-blk green-blk">
+      <h3>…au Coach « Propulseur »</h3>
+      <p>Permission · Action · Confiance libérée</p>
+    </div>
+  </div>
+  <div class="bascule-desc">
+    Alexandre intègre les <strong>protocoles de communication de précision</strong> pour transformer sa posture et libérer son équipe.
+  </div>
+</section>
+
+<!-- 6 — ARSENAL -->
+<section class="slide slide-arsenal" id="s6">
+  <span class="section-num">05</span>
+  <h2 class="slide-title green">L'Arsenal Y.E.S.I : Trois Leviers de Précision</h2>
+  <div class="pillars-row">
+    <div class="pillar">
+      <div class="pillar-icon">🔻</div>
+      <h3>Suppression des Négations</h3>
+      <p>Remplacer le "Ne pas" par l'action souhaitée immédiate.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🎯</div>
+      <h3>Protocole D.P²</h3>
+      <p>Définir très exactement 3 objectifs positifs avant le coup d'envoi.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">⏱️</div>
+      <h3>Protocole D.O.P</h3>
+      <p>Des interventions chirurgicales de 3 à 5 mots maximum en cours de match.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 — ACTE II -->
+<section class="slide slide-acte2" id="s7">
+  <span class="section-num">06</span>
+  <h2 class="slide-title green">Acte II : Le Talent Libéré</h2>
+  <div class="match-header green" style="margin-bottom:40px">
+    <p>Match vs Drancy (3 semaines après)</p>
+    <strong>RÉSULTAT : VICTOIRE 2 – 1 (Mody décisif)</strong>
+  </div>
+  <div class="bubble-grid">
+    <div class="speech-bubble">Aujourd'hui, on maîtrise le tempo. <em>On impose notre rythme.</em></div>
+    <div class="speech-bubble">Mody, cherche les intervalles. Dès que tu as l'espace, <em>joue vers l'avant.</em> J'ai confiance en ta vision.</div>
+    <div class="speech-bubble"><em>Restez compacts et solidaires</em> sur chaque duel.</div>
+  </div>
+</section>
+
+<!-- 8 — D.O.P -->
+<section class="slide slide-dop" id="s8">
+  <span class="section-num">07</span>
+  <h2 class="slide-title navy">Le Coaching Chirurgical en Direct (D.O.P)</h2>
+  <div class="match-bar"><div class="match-bar-fill"></div></div>
+  <div class="dop-timeline">
+    <div class="dop-moment">
+      <div class="dop-situation">Erreur technique</div>
+      <div class="dop-phrase">"Mody ! C'est fait. Prochaine action. Relance !"</div>
+    </div>
+    <div class="dop-moment">
+      <div class="dop-situation">Moment de tension</div>
+      <div class="dop-phrase">"Bloc haut ! Ensemble !"</div>
+    </div>
+    <div class="dop-moment">
+      <div class="dop-situation">Fatigue fin de match</div>
+      <div class="dop-phrase">"Mody, oriente et gère. Maîtrise !"</div>
+    </div>
+  </div>
+  <div class="dop-footer">L'impact de la concision : 3 à 5 mots pour recentrer l'attention sans surcharger le système nerveux.</div>
+</section>
+
+<!-- 9 — MATRICE -->
+<section class="slide slide-matrice" id="s9">
+  <span class="section-num">08</span>
+  <h2 class="slide-title navy">Synthèse : La Matrice de Transformation</h2>
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Situation</th>
+        <th class="th-red">✗ Avant (Destructeur)</th>
+        <th class="th-green">✓ Après (Constructeur)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gestion de l'erreur</td>
+        <td class="td-red">"Mais pourquoi tu tentes ça ?"</td>
+        <td class="td-green">Oublie. Action suivante.</td>
+      </tr>
+      <tr>
+        <td>Consigne tactique</td>
+        <td class="td-red">"Ne soyez pas aussi bas !"</td>
+        <td class="td-green">Remontez le bloc !</td>
+      </tr>
+      <tr>
+        <td>Prise d'initiative</td>
+        <td class="td-red">"Arrête de prendre des risques !"</td>
+        <td class="td-green">Cherche les intervalles !</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 10 — CLOSING -->
+<section class="slide slide-close" id="s10">
+  <span class="section-num" style="color:rgba(255,255,255,0.04)">09</span>
+  <h1 class="close-headline">La précision de vos mots détermine la qualité de <span>leur exécution.</span></h1>
+  <p class="close-sub">Le coaching de haut niveau ne se limite pas à la connaissance tactique. Il réside dans la capacité à formuler cette tactique d'une manière que le cerveau du joueur peut traiter instantanément, sous pression.</p>
+  <p class="yesi-stamp">Y.E.S.I CONCEPT COACHING</p>
+  <p class="close-contact"><a href="mailto:yesiconcept.rdv@gmail.com">yesiconcept.rdv@gmail.com</a></p>
+</section>
+
+<script>
+  const dots = document.querySelectorAll('.nav-dots a');
+  const slides = document.querySelectorAll('.slide');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const i = Array.from(slides).indexOf(e.target);
+        dots.forEach((d, j) => d.classList.toggle('active', i === j));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
