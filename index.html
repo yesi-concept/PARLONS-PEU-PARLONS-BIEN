@@ -27,24 +27,20 @@ body{
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.78)),
+    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)),
     url('https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1974&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
     padding:40px 20px;
     position:relative;
     overflow:hidden;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at center, rgba(0,140,255,0.12), transparent 60%);
 }
 
 .hero-content{
@@ -53,154 +49,208 @@ body{
     max-width:1000px;
 }
 
-/* LOGO SANS FOND */
+/* LOGO TRANSPARENT */
 
 .logo{
 
     width:240px;
+
     margin-bottom:20px;
 
-    opacity:0.95;
+    /* FOND INVISIBLE */
+    background:none !important;
 
+    /* FUSION AVEC LE FOND */
     mix-blend-mode:screen;
 
+    /* SUPPRESSION VISUELLE DU CARRE NOIR */
     filter:
-    brightness(1.35)
-    contrast(1.15)
-    drop-shadow(0 0 18px rgba(0,140,255,0.40));
+    brightness(2.2)
+    contrast(1.6)
+    drop-shadow(0 0 20px rgba(0,140,255,0.45));
 
-    background:transparent;
+    opacity:0.95;
 
 }
 
 /* TITRES */
 
 .hero h1{
+
     font-family:'Playfair Display',serif;
     font-size:88px;
     color:white;
     letter-spacing:4px;
     margin-bottom:15px;
+
 }
 
 .hero h2{
+
     color:#d4af37;
     font-size:28px;
     font-weight:500;
     margin-bottom:20px;
+
 }
 
 .hero p{
+
     color:white;
     font-size:22px;
     line-height:1.6;
+
 }
 
 /* MODULES */
 
 .modules{
+
     padding:90px 8%;
     background:#f5f5f5;
+
 }
 
 .modules-title{
+
     text-align:center;
     margin-bottom:60px;
+
 }
 
 .modules-title h3{
+
     font-family:'Playfair Display',serif;
     font-size:42px;
     letter-spacing:5px;
     color:#111;
+
 }
 
 .grid{
+
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
+
 }
 
 .card{
+
     background:white;
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.35s ease;
+
 }
 
 .card:hover{
+
     transform:translateY(-10px);
     box-shadow:0 18px 40px rgba(0,0,0,0.16);
+
 }
 
 .card-image{
+
     height:220px;
     background-size:cover;
     background-position:center;
     position:relative;
+
 }
 
 .card-image::after{
+
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.15));
+
+    background:
+    linear-gradient(to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.15));
+
 }
 
 .card-number{
+
     position:absolute;
     z-index:2;
     left:20px;
     top:20px;
+
     font-size:42px;
     font-weight:700;
     color:#d4af37;
+
 }
 
 .card-content{
+
     padding:28px;
+
 }
 
 .card-content h4{
+
     font-size:28px;
     margin-bottom:18px;
     color:#111;
+
 }
 
 .card-content p{
+
     line-height:1.6;
     color:#555;
     margin-bottom:25px;
+
 }
 
 .card-content a{
+
     display:inline-block;
     width:100%;
+
     text-align:center;
+
     padding:14px;
+
     background:black;
     color:white;
+
     text-decoration:none;
+
     border-radius:10px;
     font-weight:600;
+
     transition:0.3s;
+
 }
 
 .card-content a:hover{
+
     background:#d4af37;
     color:black;
+
 }
 
 /* FOOTER */
 
 footer{
+
     background:#050505;
     color:white;
+
     text-align:center;
+
     padding:30px;
+
     letter-spacing:2px;
     font-size:14px;
+
 }
 
 /* RESPONSIVE */
@@ -263,105 +313,193 @@ Deviens l’entraîneur que les joueurs n’oublient pas.
 <!-- 01 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">01.</div>
 </div>
+
 <div class="card-content">
+
 <h4>FORMATION INITIALE</h4>
-<p>Base fondamentale du Y.E.S.I CONCEPT et introduction à la logique de performance mentale.</p>
-<a href="01.YESI_Formation_Final.pdf" target="_blank">OUVRIR</a>
+
+<p>
+Base fondamentale du Y.E.S.I CONCEPT et introduction à la logique de performance mentale.
+</p>
+
+<a href="01.YESI_Formation_Final.pdf" target="_blank">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 02 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">02.</div>
 </div>
+
 <div class="card-content">
+
 <h4>LE LANGAGE DE LA PERFORMANCE</h4>
-<p>Communication efficace, impact des mots et posture du coach.</p>
-<a href="02.LE LANGAGE DE LA PERFORMANCE .html">OUVRIR</a>
+
+<p>
+Communication efficace, impact des mots et posture du coach.
+</p>
+
+<a href="02.LE LANGAGE DE LA PERFORMANCE .html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 03 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">03.</div>
 </div>
+
 <div class="card-content">
+
 <h4>ETUDE DE CAS MAJID</h4>
-<p>Analyse pratique d’un accompagnement mental et lecture comportementale.</p>
-<a href="03.ETUDE DE CAS MAJID.html">OUVRIR</a>
+
+<p>
+Analyse pratique d’un accompagnement mental et lecture comportementale.
+</p>
+
+<a href="03.ETUDE DE CAS MAJID.html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 04 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">04.</div>
 </div>
+
 <div class="card-content">
+
 <h4>ETUDE DE CAS ALEXANDRE</h4>
-<p>Compréhension des mécanismes mentaux et axes d’amélioration.</p>
-<a href="04.ETUDE DE CAS ALEXANDRE .html">OUVRIR</a>
+
+<p>
+Compréhension des mécanismes mentaux et axes d’amélioration.
+</p>
+
+<a href="04.ETUDE DE CAS ALEXANDRE .html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 05 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">05.</div>
 </div>
+
 <div class="card-content">
+
 <h4>ETUDE DE CAS FANNY</h4>
-<p>Étude comportementale et approche mentale adaptée au sportif.</p>
-<a href="05.ETUDE DE CAS FANNY .html">OUVRIR</a>
+
+<p>
+Étude comportementale et approche mentale adaptée au sportif.
+</p>
+
+<a href="05.ETUDE DE CAS FANNY .html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 06 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">06.</div>
 </div>
+
 <div class="card-content">
+
 <h4>YESI ARTICLE ATTENTION NEUROLOGIQUE</h4>
-<p>Comprendre l’attention et les mécanismes de concentration chez le sportif.</p>
-<a href="06.YESI Article Attention Neurologique.pdf" target="_blank">OUVRIR</a>
+
+<p>
+Comprendre l’attention et les mécanismes de concentration chez le sportif.
+</p>
+
+<a href="06.YESI Article Attention Neurologique.pdf" target="_blank">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 07 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">07.</div>
 </div>
+
 <div class="card-content">
+
 <h4>YESI PROTOCOLES DP2 DOP RECAPITULATIF</h4>
-<p>Méthodologie et protocoles d’utilisation des outils Y.E.S.I CONCEPT.</p>
-<a href="07.YESI Protocoles DP2 DOP Recapitulatif.html">OUVRIR</a>
+
+<p>
+Méthodologie et protocoles d’utilisation des outils Y.E.S.I CONCEPT.
+</p>
+
+<a href="07.YESI Protocoles DP2 DOP Recapitulatif.html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 <!-- 08 -->
 
 <div class="card">
+
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop');">
 <div class="card-number">08.</div>
 </div>
+
 <div class="card-content">
+
 <h4>WORKBOOK</h4>
-<p>Support pratique et exercices d’application autonome.</p>
-<a href="08.Workbook.html">OUVRIR</a>
+
+<p>
+Support pratique et exercices d’application autonome.
+</p>
+
+<a href="08.Workbook.html">
+OUVRIR
+</a>
+
 </div>
+
 </div>
 
 </div>
