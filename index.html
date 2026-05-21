@@ -4,302 +4,425 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y.E.S.I CONCEPT — Parlons Peu, Parlons Bien</title>
 
-<title>Y.E.S.I CONCEPT</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+:root{
+--gold:#d4af37;
+--gold-light:#e8cc6a;
+--black:#050505;
+--white:#ffffff;
+--grey:#f5f5f5;
+}
+
 body{
 font-family:'Inter',sans-serif;
-background:linear-gradient(to bottom,#050505,#f5f5f5);
+background:var(--black);
 color:#111;
 overflow-x:hidden;
 }
 
+/* ── HERO ── */
 .hero{
 min-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
+background:
+  linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.82)),
+  url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px 20px;
+padding:60px 24px;
 position:relative;
 overflow:hidden;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center,rgba(0,120,255,0.08),transparent 60%);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:1000px;
-}
-
 .logo{
-width:260px;
-margin-bottom:25px;
+width:220px;
+margin-bottom:40px;
 mix-blend-mode:screen;
 opacity:0.96;
-filter:brightness(1.45) contrast(1.2) drop-shadow(0 0 25px rgba(0,140,255,0.25));
+filter:brightness(1.45) contrast(1.2) drop-shadow(0 0 25px rgba(0,140,255,0.2));
+}
+
+.hero-eyebrow{
+font-family:'Inter',sans-serif;
+font-size:0.72rem;
+font-weight:500;
+letter-spacing:0.35em;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:24px;
 }
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:88px;
+font-family:'Bebas Neue',sans-serif;
+font-size:clamp(3.5rem,10vw,7rem);
 color:white;
-letter-spacing:4px;
-margin-bottom:15px;
+letter-spacing:0.04em;
+line-height:0.95;
+margin-bottom:32px;
 }
 
-.hero h2{
-color:#d4af37;
-font-size:28px;
-font-weight:500;
-margin-bottom:20px;
+/* Bénéfices visibles */
+.hero-benefits{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+margin-bottom:40px;
+max-width:700px;
 }
 
-.hero p{
-color:white;
-font-size:24px;
-line-height:1.6;
-max-width:820px;
-margin:auto;
+.benefit-tag{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(212,175,55,0.35);
+color:rgba(255,255,255,0.85);
+font-size:0.82rem;
+font-weight:400;
+letter-spacing:0.05em;
+padding:8px 18px;
+border-radius:100px;
 }
 
+.hero-sub{
+font-size:1rem;
+color:rgba(255,255,255,0.45);
+font-weight:300;
+letter-spacing:0.05em;
+}
+
+/* Ligne dorée décorative */
+.hero-line{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+height:2px;
+background:linear-gradient(to right,transparent,var(--gold),transparent);
+}
+
+/* ── SECTION MODULES ── */
 .modules{
-padding:90px 8%;
-background:#f5f5f5;
+padding:80px 6%;
+background:var(--grey);
 }
 
-.modules-title{
+.modules-header{
 text-align:center;
-margin-bottom:60px;
+margin-bottom:64px;
 }
 
-.modules-title h3{
+.modules-header .eyebrow{
+font-size:0.68rem;
+font-weight:500;
+letter-spacing:0.35em;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:14px;
+}
+
+.modules-header h2{
 font-family:'Playfair Display',serif;
-font-size:42px;
-letter-spacing:5px;
-color:#111;
+font-size:clamp(2rem,5vw,3rem);
+color:#0a0a0a;
+letter-spacing:0.05em;
 }
 
+/* ── GRILLE ── */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:24px;
 }
 
 .card{
 background:white;
-border-radius:20px;
+border-radius:16px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.35s ease;
+box-shadow:0 4px 20px rgba(0,0,0,0.06);
+transition:0.3s ease;
+display:flex;
+flex-direction:column;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 18px 40px rgba(0,0,0,0.16);
+transform:translateY(-6px);
+box-shadow:0 16px 40px rgba(0,0,0,0.13);
 }
 
 .card-image{
-height:220px;
+height:200px;
 background-size:cover;
 background-position:center;
 position:relative;
+flex-shrink:0;
 }
 
 .card-image::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to top,rgba(0,0,0,0.85),rgba(0,0,0,0.15));
+background:linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.1));
 }
 
 .card-number{
 position:absolute;
 z-index:2;
-left:20px;
-top:20px;
-font-size:42px;
-font-weight:700;
-color:#d4af37;
+left:18px;
+top:16px;
+font-family:'Bebas Neue',sans-serif;
+font-size:2.4rem;
+letter-spacing:0.05em;
+color:var(--gold);
+line-height:1;
+}
+
+/* Titre visible sur l'image */
+.card-title-overlay{
+position:absolute;
+z-index:2;
+bottom:16px;
+left:18px;
+right:18px;
+font-family:'Inter',sans-serif;
+font-size:0.78rem;
+font-weight:600;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:white;
 }
 
 .card-content{
-padding:28px;
-}
-
-.card-content h4{
-font-size:28px;
-margin-bottom:18px;
-color:#111;
+padding:24px 24px 28px;
+display:flex;
+flex-direction:column;
+flex:1;
 }
 
 .card-content p{
-line-height:1.6;
-color:#555;
-margin-bottom:25px;
+font-size:0.88rem;
+line-height:1.7;
+color:#666;
+font-weight:300;
+flex:1;
+margin-bottom:20px;
 }
 
 .card-content a{
-display:inline-block;
-width:100%;
+display:block;
 text-align:center;
-padding:14px;
-background:black;
+padding:13px;
+background:var(--black);
 color:white;
 text-decoration:none;
-border-radius:10px;
+border-radius:8px;
+font-size:0.78rem;
 font-weight:600;
+letter-spacing:0.18em;
+text-transform:uppercase;
 transition:0.3s;
 }
 
 .card-content a:hover{
-background:#d4af37;
-color:black;
+background:var(--gold);
+color:var(--black);
 }
 
+/* Carte spéciale conclusion/certificat */
+.card.special .card-content a{
+background:var(--gold);
+color:var(--black);
+}
+
+.card.special .card-content a:hover{
+background:var(--gold-light);
+}
+
+/* ── FOOTER ── */
 footer{
-background:#050505;
-color:white;
+background:var(--black);
+color:rgba(255,255,255,0.4);
 text-align:center;
-padding:30px;
-letter-spacing:2px;
-font-size:14px;
+padding:32px;
+font-size:0.75rem;
+letter-spacing:0.2em;
+text-transform:uppercase;
 }
 
+footer span{color:var(--gold);}
+
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
-.hero h1{font-size:52px;}
-.hero h2{font-size:22px;}
-.hero p{font-size:18px;}
-.modules-title h3{font-size:30px;}
-.logo{width:180px;}
+.hero{ padding:60px 20px; }
+.logo{ width:160px; }
+.modules{ padding:60px 5%; }
+.grid{ grid-template-columns:1fr; gap:20px; }
+.hero-benefits{ gap:8px; }
+.benefit-tag{ font-size:0.75rem; padding:7px 14px; }
 }
 
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<img src="logo.png" class="logo">
-<h1>Y.E.S.I CONCEPT</h1>
-<h2>Communication. Mental. Performance.</h2>
-<p>Développez votre impact, votre communication et votre compréhension du sportif moderne.</p>
-</div>
+
+  <img src="logo.png" class="logo" alt="Y.E.S.I CONCEPT">
+
+  <p class="hero-eyebrow">Formation · Préparation Mentale · Coaching</p>
+
+  <h1>PARLONS PEU.<br>PARLONS BIEN.</h1>
+
+  <div class="hero-benefits">
+    <span class="benefit-tag">Gérer un vestiaire</span>
+    <span class="benefit-tag">Recadrer sans casser la confiance</span>
+    <span class="benefit-tag">Créer de l'impact en 20 secondes</span>
+    <span class="benefit-tag">Parler après une erreur</span>
+    <span class="benefit-tag">Améliorer la réaction émotionnelle</span>
+  </div>
+
+  <p class="hero-sub">10 modules · Méthode Y.E.S.I CONCEPT</p>
+
+  <div class="hero-line"></div>
+
 </section>
 
+<!-- MODULES -->
 <section class="modules">
-<div class="modules-title"><h3>MODULES DISPONIBLES</h3></div>
-<div class="grid">
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">01.</div></div>
-<div class="card-content">
-<h4>FORMATION INITIALE</h4>
-<p>Base fondamentale du Y.E.S.I CONCEPT et introduction à la logique de performance mentale.</p>
-<a href="01.YESI_Formation_Final.pdf" target="_blank">OUVRIR</a>
-</div>
-</div>
+  <div class="modules-header">
+    <p class="eyebrow">Programme complet</p>
+    <h2>Les 10 modules</h2>
+  </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">02.</div></div>
-<div class="card-content">
-<h4>LE LANGAGE DE LA PERFORMANCE</h4>
-<p>Communication efficace, impact des mots et posture du coach.</p>
-<a href="02.LE LANGAGE DE LA PERFORMANCE .html">OUVRIR</a>
-</div>
-</div>
+  <div class="grid">
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">03.</div></div>
-<div class="card-content">
-<h4>ETUDE DE CAS MAJID</h4>
-<p>Analyse pratique d'un accompagnement mental et lecture comportementale.</p>
-<a href="03.ETUDE DE CAS MAJID.html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">01.</div>
+        <div class="card-title-overlay">Formation Initiale</div>
+      </div>
+      <div class="card-content">
+        <p>Base fondamentale du Y.E.S.I CONCEPT et introduction à la logique de performance mentale.</p>
+        <a href="01.YESI_Formation_Final.pdf" target="_blank">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">04.</div></div>
-<div class="card-content">
-<h4>ETUDE DE CAS ALEXANDRE</h4>
-<p>Compréhension des mécanismes mentaux et axes d'amélioration.</p>
-<a href="04.ETUDE DE CAS ALEXANDRE .html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">02.</div>
+        <div class="card-title-overlay">Le Langage de la Performance</div>
+      </div>
+      <div class="card-content">
+        <p>Communication efficace, impact des mots et posture du coach.</p>
+        <a href="02.LE LANGAGE DE LA PERFORMANCE .html">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">05.</div></div>
-<div class="card-content">
-<h4>ETUDE DE CAS FANNY</h4>
-<p>Étude comportementale et approche mentale adaptée au sportif.</p>
-<a href="05.ETUDE DE CAS FANNY .html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">03.</div>
+        <div class="card-title-overlay">Étude de Cas — Majid</div>
+      </div>
+      <div class="card-content">
+        <p>Analyse pratique d'un accompagnement mental et lecture comportementale.</p>
+        <a href="03.ETUDE DE CAS MAJID.html">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">06.</div></div>
-<div class="card-content">
-<h4>YESI ARTICLE ATTENTION NEUROLOGIQUE</h4>
-<p>Comprendre l'attention et les mécanismes de concentration chez le sportif.</p>
-<a href="06.YESI Article Attention Neurologique.pdf" target="_blank">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">04.</div>
+        <div class="card-title-overlay">Étude de Cas — Alexandre</div>
+      </div>
+      <div class="card-content">
+        <p>Compréhension des mécanismes mentaux et axes d'amélioration.</p>
+        <a href="04.ETUDE DE CAS ALEXANDRE .html">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">07.</div></div>
-<div class="card-content">
-<h4>YESI PROTOCOLES DP2 DOP RECAPITULATIF</h4>
-<p>Méthodologie et protocoles d'utilisation des outils Y.E.S.I CONCEPT.</p>
-<a href="07.YESI Protocoles DP2 DOP Recapitulatif.html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">05.</div>
+        <div class="card-title-overlay">Étude de Cas — Fanny</div>
+      </div>
+      <div class="card-content">
+        <p>Étude comportementale et approche mentale adaptée au sportif.</p>
+        <a href="05.ETUDE DE CAS FANNY .html">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">08.</div></div>
-<div class="card-content">
-<h4>WORKBOOK</h4>
-<p>Support pratique et exercices d'application autonome.</p>
-<a href="08.Workbook.html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">06.</div>
+        <div class="card-title-overlay">Article — Attention Neurologique</div>
+      </div>
+      <div class="card-content">
+        <p>Comprendre l'attention et les mécanismes de concentration chez le sportif.</p>
+        <a href="06.YESI Article Attention Neurologique.pdf" target="_blank">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1431440869543-efaf3388c585?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">09.</div></div>
-<div class="card-content">
-<h4>LA FIN N'EST PAS UNE FIN</h4>
-<p>Conclusion de la formation et passage vers la suite de ton parcours.</p>
-<a href="09.LA FIN N EST PAS UNE FIN.html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">07.</div>
+        <div class="card-title-overlay">Protocoles DP² & DOP</div>
+      </div>
+      <div class="card-content">
+        <p>Méthodologie et protocoles d'utilisation des outils Y.E.S.I CONCEPT.</p>
+        <a href="07.YESI Protocoles DP2 DOP Recapitulatif.html">OUVRIR</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1974&auto=format&fit=crop');"><div class="card-number">10.</div></div>
-<div class="card-content">
-<h4>CERTIFICAT</h4>
-<p>Génère et télécharge ton certificat de complétion de la formation.</p>
-<a href="10.CERTIFICAT.html">OUVRIR</a>
-</div>
-</div>
+    <div class="card">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">08.</div>
+        <div class="card-title-overlay">Workbook</div>
+      </div>
+      <div class="card-content">
+        <p>Support pratique et exercices d'application autonome.</p>
+        <a href="08.Workbook.html">OUVRIR</a>
+      </div>
+    </div>
 
-</div>
+    <div class="card special">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1431440869543-efaf3388c585?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">09.</div>
+        <div class="card-title-overlay">La Fin N'est Pas Une Fin</div>
+      </div>
+      <div class="card-content">
+        <p>Conclusion de la formation et passage vers la suite de ton parcours.</p>
+        <a href="09.LA FIN N EST PAS UNE FIN.html">OUVRIR</a>
+      </div>
+    </div>
+
+    <div class="card special">
+      <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1974&auto=format&fit=crop');">
+        <div class="card-number">10.</div>
+        <div class="card-title-overlay">Certificat</div>
+      </div>
+      <div class="card-content">
+        <p>Génère et télécharge ton certificat de complétion de la formation.</p>
+        <a href="10.CERTIFICAT.html">OUVRIR</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<footer>Y.E.S.I CONCEPT © 2026</footer>
+<footer>
+  <span>Y.E.S.I CONCEPT</span> © 2026 — Préparation Mentale · Performance · Excellence Sportive
+</footer>
 
 </body>
 </html>
