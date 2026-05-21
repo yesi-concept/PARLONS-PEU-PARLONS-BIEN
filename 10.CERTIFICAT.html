@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Y.E.S.I CONCEPT | Certificat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,74 +12,64 @@
     :root {
       --gold: #B8952A;
       --gold-light: #D4AF55;
-      --gold-pale: #F7F0DC;
       --black: #0A0A0A;
       --grey: #6B6B6B;
       --white: #FFFFFF;
     }
 
     body {
-      background: #F4F4F2;
+      background: #F0F0EE;
       font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 24px 80px;
+      padding: 40px 20px 80px;
     }
 
-    /* ── HEADER ── */
     .page-header {
       text-align: center;
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.2s;
+      margin-bottom: 28px;
     }
 
     .page-header .eyebrow {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .page-header h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      letter-spacing: 0.08em;
+      font-size: 2.4rem;
+      letter-spacing: 0.1em;
       color: var(--black);
     }
 
-    /* ── FORMULAIRE ── */
     .form-zone {
       display: flex;
-      gap: 12px;
-      margin-bottom: 48px;
+      gap: 10px;
+      margin-bottom: 32px;
       width: 100%;
-      max-width: 560px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.4s;
+      max-width: 520px;
     }
 
     .form-zone input {
       flex: 1;
       background: var(--white);
-      border: 1px solid #DCDCDC;
+      border: 1px solid #D0D0D0;
       border-radius: 2px;
-      padding: 14px 20px;
+      padding: 13px 18px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-style: italic;
       color: var(--black);
       outline: none;
-      transition: border-color 0.3s;
     }
 
     .form-zone input:focus { border-color: var(--gold); }
-
     .form-zone input::placeholder { color: #BDBDBD; }
 
     .btn-generate {
@@ -87,150 +77,150 @@
       color: var(--white);
       border: none;
       border-radius: 2px;
-      padding: 14px 28px;
+      padding: 13px 24px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.15em;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
       white-space: nowrap;
-    }
-
-    .btn-generate:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
     }
 
     /* ── CERTIFICAT ── */
     .cert-wrapper {
       width: 100%;
-      max-width: 860px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.6s;
+      max-width: 720px;
     }
 
     #certificat {
       background: var(--white);
       width: 100%;
-      aspect-ratio: 1.414 / 1; /* A4 paysage */
       position: relative;
+      padding: 14px; /* espace pour la bordure extérieure */
+    }
+
+    /* Zone intérieure avec tout le contenu */
+    .cert-inner {
+      border: 1px solid var(--gold);
+      padding: 40px 40px 32px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 48px 64px;
-      overflow: hidden;
+      gap: 14px;
+      position: relative;
     }
 
-    /* Bordure dorée double */
-    #certificat::before {
+    /* Bordure intérieure fine */
+    .cert-inner::after {
       content: '';
       position: absolute;
-      inset: 16px;
-      border: 1px solid var(--gold);
-      pointer-events: none;
-    }
-
-    #certificat::after {
-      content: '';
-      position: absolute;
-      inset: 22px;
+      inset: 6px;
       border: 1px solid rgba(184,149,42,0.25);
       pointer-events: none;
     }
 
-    /* Coins décoratifs */
+    /* Bordure extérieure */
+    #certificat::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Coins */
     .corner {
       position: absolute;
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       border-color: var(--gold);
       border-style: solid;
+      z-index: 2;
     }
-    .corner.tl { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
-    .corner.tr { top: 10px; right: 10px; border-width: 2px 2px 0 0; }
-    .corner.bl { bottom: 10px; left: 10px; border-width: 0 0 2px 2px; }
-    .corner.br { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+    .corner.tl { top: 2px; left: 2px; border-width: 2px 0 0 2px; }
+    .corner.tr { top: 2px; right: 2px; border-width: 2px 2px 0 0; }
+    .corner.bl { bottom: 2px; left: 2px; border-width: 0 0 2px 2px; }
+    .corner.br { bottom: 2px; right: 2px; border-width: 0 2px 2px 0; }
 
-    /* Logo */
+    /* Watermark */
+    .cert-watermark {
+      position: absolute;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 8rem;
+      color: rgba(184,149,42,0.05);
+      pointer-events: none;
+      user-select: none;
+      bottom: 10px;
+      right: 10px;
+      letter-spacing: 0.05em;
+      z-index: 0;
+    }
+
     .cert-logo {
-      height: 48px;
+      height: 72px;
+      width: 72px;
       object-fit: contain;
-      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Ligne dorée */
     .cert-line {
-      width: 80px;
+      width: 70px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 20px;
     }
 
-    /* Certificat de completion */
     .cert-label {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--grey);
-      margin-bottom: 18px;
       text-align: center;
     }
 
-    /* Nom du participant */
     .cert-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 400;
       font-style: italic;
       color: var(--gold);
       text-align: center;
       line-height: 1.1;
-      margin-bottom: 20px;
       min-height: 1.2em;
-      transition: all 0.4s ease;
     }
 
-    /* Phrase de validation */
     .cert-validation {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
       font-weight: 300;
       color: var(--grey);
       text-align: center;
-      line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: 8px;
+      line-height: 1.8;
     }
 
-    /* Nom de la formation */
     .cert-formation {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.12em;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.15em;
       color: var(--black);
       text-align: center;
-      margin-bottom: 28px;
     }
 
-    /* Pied de certificat */
     .cert-footer {
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 48px;
+      justify-content: space-between;
+      align-items: flex-start;
       width: 100%;
-      max-width: 520px;
+      margin-top: 4px;
+      gap: 24px;
     }
 
-    .cert-sig {
-      text-align: center;
-      flex: 1;
-    }
+    .cert-sig { flex: 1; }
+    .cert-date-block { flex: 1; }
 
-    .cert-sig-line {
+    .cert-sig-line, .cert-date-line {
       width: 100%;
       height: 1px;
       background: rgba(0,0,0,0.15);
@@ -238,112 +228,72 @@
     }
 
     .cert-sig-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--black);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
     .cert-sig-title {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 300;
-      color: var(--grey);
-      letter-spacing: 0.08em;
-      margin-top: 2px;
-    }
-
-    .cert-date-block {
-      text-align: center;
-      flex: 1;
-    }
-
-    .cert-date-line {
-      width: 100%;
-      height: 1px;
-      background: rgba(0,0,0,0.15);
-      margin-bottom: 8px;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-top: 3px;
     }
 
     .cert-date-label {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 300;
+      font-size: 0.58rem;
+      font-weight: 500;
       color: var(--grey);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
     .cert-date-val {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 0.78rem;
-      font-weight: 400;
+      font-size: 0.95rem;
       color: var(--black);
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    /* Watermark Y.E.S.I */
-    .cert-watermark {
-      position: absolute;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 9rem;
-      color: rgba(184,149,42,0.04);
-      letter-spacing: 0.05em;
-      pointer-events: none;
-      user-select: none;
-      bottom: -10px;
-      right: 30px;
-    }
-
-    /* ── BOUTON TÉLÉCHARGER ── */
+    /* ── TÉLÉCHARGER ── */
     .download-zone {
-      margin-top: 28px;
+      margin-top: 24px;
       text-align: center;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.8s;
     }
 
     .btn-download {
-      display: inline-block;
       background: var(--black);
       color: var(--white);
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1rem;
-      letter-spacing: 0.22em;
-      text-decoration: none;
-      padding: 16px 44px;
+      letter-spacing: 0.2em;
+      padding: 15px 40px;
       border-radius: 2px;
       border: none;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s;
     }
 
-    .btn-download:hover {
-      background: var(--gold);
-      transform: translateY(-2px);
-    }
+    .btn-download:hover { background: var(--gold); }
 
     .download-note {
-      margin-top: 12px;
-      font-size: 0.75rem;
+      margin-top: 10px;
+      font-size: 0.72rem;
       color: var(--grey);
       letter-spacing: 0.05em;
     }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      body { padding: 32px 16px 60px; }
-      #certificat { padding: 32px 28px; }
+    @media (max-width: 500px) {
       .form-zone { flex-direction: column; }
-      .btn-generate { width: 100%; text-align: center; }
-      .cert-footer { gap: 24px; }
+      .btn-generate { width: 100%; }
+      .cert-inner { padding: 28px 20px 24px; gap: 10px; }
+      .cert-sig-name { font-size: 0.7rem; }
+      .cert-sig-title { font-size: 0.6rem; }
     }
   </style>
 </head>
@@ -362,55 +312,46 @@
   <div class="cert-wrapper">
     <div id="certificat">
 
-      <!-- Coins -->
       <div class="corner tl"></div>
       <div class="corner tr"></div>
       <div class="corner bl"></div>
       <div class="corner br"></div>
-
-      <!-- Watermark -->
       <div class="cert-watermark">YESI</div>
 
-      <!-- Logo -->
-      <img
-        src="https://yesi-concept.github.io/PARLONS-PEU-PARLONS-BIEN/logo.png"
-        alt="Y.E.S.I CONCEPT"
-        class="cert-logo"
-        crossorigin="anonymous"
-      />
+      <div class="cert-inner">
 
-      <!-- Ligne -->
-      <div class="cert-line"></div>
+        <img
+          src="https://yesi-concept.github.io/PARLONS-PEU-PARLONS-BIEN/logo.png"
+          alt="Y.E.S.I CONCEPT"
+          class="cert-logo"
+          crossorigin="anonymous"
+        />
 
-      <!-- Label -->
-      <p class="cert-label">Certificat de complétion</p>
+        <div class="cert-line"></div>
+        <p class="cert-label">Certificat de complétion</p>
+        <div class="cert-name" id="certNom">Prénom Nom</div>
 
-      <!-- Nom -->
-      <div class="cert-name" id="certNom">Prénom Nom</div>
+        <p class="cert-validation">
+          Bravo pour cette progression et félicitations pour l'obtention de ce certificat.<br>
+          A complété avec succès la formation
+        </p>
 
-      <!-- Validation -->
-      <p class="cert-validation">
-        Bravo pour cette progression et félicitations pour l'obtention de ce certificat.<br>
-        A complété avec succès la formation
-      </p>
+        <div class="cert-formation">PARLONS PEU, PARLONS BIEN</div>
 
-      <!-- Formation -->
-      <div class="cert-formation">PARLONS PEU, PARLONS BIEN</div>
-
-      <!-- Footer -->
-      <div class="cert-footer">
-        <div class="cert-sig">
-          <div class="cert-sig-line"></div>
-          <div class="cert-sig-name">Din Edjangue Désiré</div>
-          <div class="cert-sig-title">Fondateur — Y.E.S.I CONCEPT</div>
+        <div class="cert-footer">
+          <div class="cert-sig">
+            <div class="cert-sig-line"></div>
+            <div class="cert-sig-name">Désir Din Edjangue</div>
+            <div class="cert-sig-title">Fondateur — Y.E.S.I CONCEPT</div>
+          </div>
+          <div class="cert-date-block">
+            <div class="cert-date-line"></div>
+            <div class="cert-date-label">Date d'obtention</div>
+            <div class="cert-date-val" id="certDate">—</div>
+          </div>
         </div>
-        <div class="cert-date-block">
-          <div class="cert-date-line"></div>
-          <div class="cert-date-label">Date d'obtention</div>
-          <div class="cert-date-val" id="certDate">—</div>
-        </div>
+
       </div>
-
     </div>
   </div>
 
@@ -420,11 +361,9 @@
   </div>
 
   <script>
-    // Date du jour
     const today = new Date();
     const mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-    const dateStr = today.getDate() + ' ' + mois[today.getMonth()] + ' ' + today.getFullYear();
-    document.getElementById('certDate').textContent = dateStr;
+    document.getElementById('certDate').textContent = today.getDate() + ' ' + mois[today.getMonth()] + ' ' + today.getFullYear();
 
     function generer() {
       const nom = document.getElementById('nomInput').value.trim();
