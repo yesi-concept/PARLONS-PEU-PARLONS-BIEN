@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,65 +12,81 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:linear-gradient(to bottom,#050505,#f5f5f5);
-    color:#111;
+font-family:'Inter',sans-serif;
+background:linear-gradient(to bottom,#050505,#f5f5f5);
+color:#111;
+overflow-x:hidden;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)),
-    url('https://images.unsplash.com/photo-1543357480-c60d40007a3f?q=80&w=1974&auto=format&fit=crop');
 
-    background-size:cover;
-    background-position:center;
+min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),
+url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
 
-    padding:40px 20px;
-    position:relative;
-    overflow:hidden;
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+padding:40px 20px;
+
+position:relative;
+overflow:hidden;
+
+}
+
+.hero::after{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at center,
+rgba(0,120,255,0.08),
+transparent 60%);
+
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1000px;
+
+position:relative;
+z-index:2;
+max-width:1000px;
+
 }
 
-/* LOGO TRANSPARENT */
+/* LOGO */
 
 .logo{
 
-    width:240px;
+width:260px;
 
-    margin-bottom:20px;
+margin-bottom:25px;
 
-    /* FOND INVISIBLE */
-    background:none !important;
+/* fusion du logo */
+mix-blend-mode:screen;
 
-    /* FUSION AVEC LE FOND */
-    mix-blend-mode:screen;
+opacity:0.96;
 
-    /* SUPPRESSION VISUELLE DU CARRE NOIR */
-    filter:
-    brightness(2.2)
-    contrast(1.6)
-    drop-shadow(0 0 20px rgba(0,140,255,0.45));
-
-    opacity:0.95;
+filter:
+brightness(1.45)
+contrast(1.2)
+drop-shadow(0 0 25px rgba(0,140,255,0.25));
 
 }
 
@@ -77,28 +94,36 @@ body{
 
 .hero h1{
 
-    font-family:'Playfair Display',serif;
-    font-size:88px;
-    color:white;
-    letter-spacing:4px;
-    margin-bottom:15px;
+font-family:'Playfair Display',serif;
+font-size:88px;
+
+color:white;
+
+letter-spacing:4px;
+margin-bottom:15px;
 
 }
 
 .hero h2{
 
-    color:#d4af37;
-    font-size:28px;
-    font-weight:500;
-    margin-bottom:20px;
+color:#d4af37;
+
+font-size:28px;
+font-weight:500;
+
+margin-bottom:20px;
 
 }
 
 .hero p{
 
-    color:white;
-    font-size:22px;
-    line-height:1.6;
+color:white;
+
+font-size:24px;
+line-height:1.6;
+
+max-width:820px;
+margin:auto;
 
 }
 
@@ -106,134 +131,151 @@ body{
 
 .modules{
 
-    padding:90px 8%;
-    background:#f5f5f5;
+padding:90px 8%;
+background:#f5f5f5;
 
 }
 
 .modules-title{
 
-    text-align:center;
-    margin-bottom:60px;
+text-align:center;
+margin-bottom:60px;
 
 }
 
 .modules-title h3{
 
-    font-family:'Playfair Display',serif;
-    font-size:42px;
-    letter-spacing:5px;
-    color:#111;
+font-family:'Playfair Display',serif;
+font-size:42px;
+
+letter-spacing:5px;
+
+color:#111;
 
 }
 
 .grid{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 
 }
 
 .card{
 
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.35s ease;
+background:white;
+
+border-radius:20px;
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+transition:0.35s ease;
 
 }
 
 .card:hover{
 
-    transform:translateY(-10px);
-    box-shadow:0 18px 40px rgba(0,0,0,0.16);
+transform:translateY(-10px);
+
+box-shadow:0 18px 40px rgba(0,0,0,0.16);
 
 }
 
 .card-image{
 
-    height:220px;
-    background-size:cover;
-    background-position:center;
-    position:relative;
+height:220px;
+
+background-size:cover;
+background-position:center;
+
+position:relative;
 
 }
 
 .card-image::after{
 
-    content:"";
-    position:absolute;
-    inset:0;
+content:"";
 
-    background:
-    linear-gradient(to top,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.15));
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(to top,
+rgba(0,0,0,0.85),
+rgba(0,0,0,0.15));
 
 }
 
 .card-number{
 
-    position:absolute;
-    z-index:2;
-    left:20px;
-    top:20px;
+position:absolute;
 
-    font-size:42px;
-    font-weight:700;
-    color:#d4af37;
+z-index:2;
+
+left:20px;
+top:20px;
+
+font-size:42px;
+font-weight:700;
+
+color:#d4af37;
 
 }
 
 .card-content{
 
-    padding:28px;
+padding:28px;
 
 }
 
 .card-content h4{
 
-    font-size:28px;
-    margin-bottom:18px;
-    color:#111;
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#111;
 
 }
 
 .card-content p{
 
-    line-height:1.6;
-    color:#555;
-    margin-bottom:25px;
+line-height:1.6;
+
+color:#555;
+
+margin-bottom:25px;
 
 }
 
 .card-content a{
 
-    display:inline-block;
-    width:100%;
+display:inline-block;
+width:100%;
 
-    text-align:center;
+text-align:center;
 
-    padding:14px;
+padding:14px;
 
-    background:black;
-    color:white;
+background:black;
+color:white;
 
-    text-decoration:none;
+text-decoration:none;
 
-    border-radius:10px;
-    font-weight:600;
+border-radius:10px;
 
-    transition:0.3s;
+font-weight:600;
+
+transition:0.3s;
 
 }
 
 .card-content a:hover{
 
-    background:#d4af37;
-    color:black;
+background:#d4af37;
+color:black;
 
 }
 
@@ -241,15 +283,17 @@ body{
 
 footer{
 
-    background:#050505;
-    color:white;
+background:#050505;
 
-    text-align:center;
+color:white;
 
-    padding:30px;
+text-align:center;
 
-    letter-spacing:2px;
-    font-size:14px;
+padding:30px;
+
+letter-spacing:2px;
+
+font-size:14px;
 
 }
 
@@ -258,31 +302,34 @@ footer{
 @media(max-width:768px){
 
 .hero h1{
-    font-size:52px;
+font-size:52px;
 }
 
 .hero h2{
-    font-size:22px;
+font-size:22px;
 }
 
 .hero p{
-    font-size:18px;
+font-size:18px;
 }
 
 .modules-title h3{
-    font-size:30px;
+font-size:30px;
 }
 
 .logo{
-    width:180px;
+width:180px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -295,17 +342,22 @@ footer{
 <h2>Communication. Mental. Performance.</h2>
 
 <p>
-Deviens l’entraîneur que les joueurs n’oublient pas.
+Développez votre impact, votre communication
+et votre compréhension du sportif moderne.
 </p>
 
 </div>
 
 </section>
 
+<!-- MODULES -->
+
 <section class="modules">
 
 <div class="modules-title">
+
 <h3>MODULES DISPONIBLES</h3>
+
 </div>
 
 <div class="grid">
@@ -315,7 +367,9 @@ Deviens l’entraîneur que les joueurs n’oublient pas.
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">01.</div>
+
 </div>
 
 <div class="card-content">
@@ -339,7 +393,9 @@ OUVRIR
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">02.</div>
+
 </div>
 
 <div class="card-content">
@@ -362,8 +418,10 @@ OUVRIR
 
 <div class="card">
 
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">03.</div>
+
 </div>
 
 <div class="card-content">
@@ -387,7 +445,9 @@ OUVRIR
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">04.</div>
+
 </div>
 
 <div class="card-content">
@@ -410,8 +470,10 @@ OUVRIR
 
 <div class="card">
 
-<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">05.</div>
+
 </div>
 
 <div class="card-content">
@@ -435,7 +497,9 @@ OUVRIR
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">06.</div>
+
 </div>
 
 <div class="card-content">
@@ -459,7 +523,9 @@ OUVRIR
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">07.</div>
+
 </div>
 
 <div class="card-content">
@@ -483,7 +549,9 @@ OUVRIR
 <div class="card">
 
 <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop');">
+
 <div class="card-number">08.</div>
+
 </div>
 
 <div class="card-content">
@@ -507,7 +575,9 @@ OUVRIR
 </section>
 
 <footer>
+
 Y.E.S.I CONCEPT © 2026
+
 </footer>
 
 </body>
