@@ -1,547 +1,972 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Langage de la Performance - Y.E.S.I CONCEPT</title>
+
+<title>Le Langage de la Performance – Y.E.S.I CONCEPT</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#f4f4f4;
-    color:#111;
-    line-height:1.6;
+font-family:'Inter',sans-serif;
+background:linear-gradient(to bottom,#050505,#f5f5f5);
+color:#111;
+overflow-x:hidden;
 }
 
-section{
-    padding:80px 10%;
-}
+/* HERO */
 
 .hero{
-    min-height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
+
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)),
+url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+padding:40px 20px;
+
+position:relative;
+overflow:hidden;
+
+}
+
+.hero::after{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at center,
+rgba(0,120,255,0.08),
+transparent 60%);
+
 }
 
 .hero-content{
-    max-width:900px;
+
+position:relative;
+z-index:2;
+max-width:1000px;
+
 }
 
 .logo{
-    font-size:20px;
-    letter-spacing:3px;
-    margin-bottom:20px;
-    font-weight:600;
-    color:#4aa3ff;
+
+width:260px;
+margin-bottom:25px;
+mix-blend-mode:screen;
+opacity:0.96;
+filter:brightness(1.45) contrast(1.2) drop-shadow(0 0 25px rgba(0,140,255,0.25));
+
 }
 
 .hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:70px;
-    line-height:1.1;
-    margin-bottom:20px;
+
+font-family:'Playfair Display',serif;
+font-size:72px;
+
+color:white;
+
+letter-spacing:4px;
+margin-bottom:15px;
+
+}
+
+.hero h2{
+
+color:#d4af37;
+
+font-size:24px;
+font-weight:500;
+
+margin-bottom:20px;
+
 }
 
 .hero p{
-    font-size:24px;
-    font-weight:300;
-    margin-bottom:40px;
+
+color:white;
+
+font-size:20px;
+line-height:1.6;
+
+max-width:820px;
+margin:auto;
+
 }
 
-.btn{
-    display:inline-block;
-    padding:16px 40px;
-    background:#4aa3ff;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    border-radius:8px;
-    transition:0.3s;
+/* RETOUR */
+
+.back-btn{
+
+display:inline-block;
+
+margin-top:36px;
+
+padding:12px 28px;
+
+border:1px solid rgba(255,255,255,0.3);
+border-radius:8px;
+
+color:white;
+text-decoration:none;
+
+font-size:14px;
+font-weight:500;
+letter-spacing:2px;
+
+transition:0.3s;
+
 }
 
-.btn:hover{
-    background:#1f7fe0;
-    transform:translateY(-2px);
+.back-btn:hover{
+
+background:#d4af37;
+border-color:#d4af37;
+color:black;
+
+}
+
+/* SECTIONS */
+
+.section{
+
+padding:90px 8%;
+background:#f5f5f5;
+
+}
+
+.section-dark{
+
+padding:90px 8%;
+background:#0d0d0d;
+
 }
 
 .section-title{
-    font-family:'Playfair Display',serif;
-    font-size:52px;
-    margin-bottom:30px;
-    color:#111;
+
+text-align:center;
+margin-bottom:60px;
+
 }
 
-.section-subtitle{
-    font-size:22px;
-    color:#555;
-    margin-bottom:50px;
-    max-width:900px;
+.section-title h3{
+
+font-family:'Playfair Display',serif;
+font-size:42px;
+letter-spacing:5px;
+color:#111;
+
 }
 
-.dark{
-    background:#071529;
-    color:white;
+.section-dark .section-title h3{
+
+color:white;
+
 }
 
-.dark .section-title,
-.dark .section-subtitle{
-    color:white;
+.section-title p{
+
+margin-top:14px;
+font-size:16px;
+color:#777;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+
 }
 
-.grid-2{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:40px;
+.section-dark .section-title p{
+
+color:#aaa;
+
+}
+
+/* INTRO BLOC */
+
+.intro-bloc{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+max-width:900px;
+margin:0 auto 80px;
+
+}
+
+.intro-card{
+
+background:white;
+border-radius:20px;
+padding:40px 32px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+text-align:center;
+
+}
+
+.intro-card .num{
+
+font-family:'Playfair Display',serif;
+font-size:48px;
+color:#d4af37;
+margin-bottom:12px;
+
+}
+
+.intro-card h4{
+
+font-size:20px;
+font-weight:700;
+color:#111;
+margin-bottom:10px;
+letter-spacing:1px;
+
+}
+
+.intro-card p{
+
+font-size:14px;
+color:#555;
+line-height:1.6;
+
+}
+
+.intro-card .tag{
+
+display:inline-block;
+margin-top:16px;
+padding:6px 16px;
+background:#111;
+color:#d4af37;
+border-radius:6px;
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+
+}
+
+/* PRINCIPES */
+
+.principes-list{
+
+max-width:700px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+
+}
+
+.principe-item{
+
+background:white;
+border-radius:14px;
+padding:24px 32px;
+display:flex;
+align-items:center;
+gap:24px;
+box-shadow:0 6px 20px rgba(0,0,0,0.06);
+
+}
+
+.principe-num{
+
+font-family:'Playfair Display',serif;
+font-size:36px;
+color:#d4af37;
+flex-shrink:0;
+width:48px;
+text-align:center;
+
+}
+
+.principe-text strong{
+
+display:block;
+font-size:17px;
+color:#111;
+margin-bottom:4px;
+
+}
+
+.principe-text span{
+
+font-size:14px;
+color:#777;
+
+}
+
+/* GRID CARDS */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
 }
 
 .card{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.35s ease;
+
 }
 
-.card h3{
-    font-size:30px;
-    margin-bottom:20px;
+.card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 18px 40px rgba(0,0,0,0.16);
+
 }
 
-.card p{
-    color:#444;
+.card-image{
+
+height:200px;
+background-size:cover;
+background-position:center;
+position:relative;
+
 }
 
-.dark .card{
-    background:#10213b;
-    color:white;
+.card-image::after{
+
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.85),rgba(0,0,0,0.15));
+
 }
 
-.dark .card p{
-    color:#d8d8d8;
+.card-number{
+
+position:absolute;
+z-index:2;
+left:20px;
+top:20px;
+font-size:36px;
+font-weight:700;
+color:#d4af37;
+
 }
 
-.principles{
-    display:grid;
-    gap:25px;
-    margin-top:40px;
+.card-badge{
+
+position:absolute;
+z-index:2;
+right:16px;
+bottom:16px;
+padding:4px 12px;
+background:rgba(212,175,55,0.9);
+border-radius:6px;
+font-size:11px;
+font-weight:700;
+letter-spacing:1px;
+color:#000;
+
 }
 
-.principle{
-    background:white;
-    padding:25px;
-    border-left:6px solid #4aa3ff;
-    border-radius:12px;
-    font-size:22px;
-    font-weight:500;
+.card-content{
+
+padding:28px;
+
 }
 
-.quote{
-    text-align:center;
-    font-size:54px;
-    font-family:'Playfair Display',serif;
-    line-height:1.3;
-    max-width:1100px;
-    margin:auto;
+.card-content h4{
+
+font-size:22px;
+margin-bottom:10px;
+color:#111;
+
 }
 
-.cta{
-    text-align:center;
+.card-content .situation{
+
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#d4af37;
+margin-bottom:12px;
+text-transform:uppercase;
+
 }
 
-.cta h2{
-    font-family:'Playfair Display',serif;
-    font-size:60px;
-    margin-bottom:20px;
+.card-content p{
+
+line-height:1.6;
+color:#555;
+margin-bottom:20px;
+font-size:14px;
+
 }
 
-.cta p{
-    font-size:22px;
-    margin-bottom:40px;
+.phrases{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-bottom:20px;
+
 }
 
-.footer{
-    background:#020b18;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
+.phrase-bad{
+
+display:flex;
+align-items:flex-start;
+gap:10px;
+font-size:13px;
+color:#888;
+line-height:1.45;
+
 }
 
-.footer p{
-    margin:10px 0;
+.phrase-good{
+
+display:flex;
+align-items:flex-start;
+gap:10px;
+font-size:13px;
+font-weight:700;
+color:#111;
+line-height:1.45;
+
 }
+
+.card-note{
+
+font-size:12px;
+font-style:italic;
+color:#999;
+line-height:1.5;
+border-top:1px solid #eee;
+padding-top:14px;
+
+}
+
+/* DOP CARDS */
+
+.dop-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+
+}
+
+.dop-card{
+
+background:#1a1a1a;
+border-radius:20px;
+padding:36px 28px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+}
+
+.dop-card-title{
+
+font-size:20px;
+font-weight:700;
+color:white;
+margin-bottom:20px;
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.dop-label{
+
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#d4af37;
+margin-bottom:4px;
+text-transform:uppercase;
+
+}
+
+.dop-val{
+
+font-size:14px;
+color:#aaa;
+margin-bottom:16px;
+line-height:1.5;
+
+}
+
+.dop-interventions{
+
+display:flex;
+flex-direction:column;
+gap:8px;
+
+}
+
+.dop-interv-item{
+
+display:flex;
+align-items:flex-start;
+gap:10px;
+font-size:13px;
+color:#ccc;
+line-height:1.4;
+
+}
+
+/* CITATION */
+
+.citation-bloc{
+
+background:#050505;
+padding:90px 8%;
+text-align:center;
+
+}
+
+.citation-bloc blockquote{
+
+font-family:'Playfair Display',serif;
+font-size:clamp(1.6rem,3.5vw,2.8rem);
+color:white;
+line-height:1.3;
+max-width:800px;
+margin:0 auto 24px;
+
+}
+
+.citation-bloc cite{
+
+font-size:14px;
+color:#d4af37;
+letter-spacing:2px;
+font-style:normal;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:#050505;
+color:white;
+text-align:center;
+padding:30px;
+letter-spacing:2px;
+font-size:14px;
+
+}
+
+/* RESPONSIVE MOBILE */
 
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:46px;
-    }
+.hero{ min-height:100svh; padding:40px 20px; }
+.hero h1{ font-size:32px; letter-spacing:2px; }
+.hero h2{ font-size:16px; }
+.hero p{ font-size:15px; line-height:1.6; }
+.logo{ width:160px; }
 
-    .section-title{
-        font-size:38px;
-    }
+.section{ padding:60px 5%; }
+.section-dark{ padding:60px 5%; }
+.section-title h3{ font-size:22px; letter-spacing:3px; }
+.section-title p{ font-size:14px; }
 
-    .quote{
-        font-size:34px;
-    }
+.intro-bloc{ grid-template-columns:1fr; gap:20px; margin-bottom:50px; }
+.intro-card{ padding:28px 20px; }
+.intro-card .num{ font-size:36px; }
+.intro-card h4{ font-size:18px; }
+
+.principes-list{ gap:14px; }
+.principe-item{ padding:18px 20px; gap:16px; }
+.principe-num{ font-size:28px; width:36px; }
+.principe-text strong{ font-size:15px; }
+.principe-text span{ font-size:13px; }
+
+.grid{ grid-template-columns:1fr; gap:20px; }
+.card-image{ height:160px; }
+.card-number{ font-size:28px; }
+.card-content{ padding:20px; }
+.card-content h4{ font-size:18px; }
+
+.dop-grid{ grid-template-columns:1fr; gap:20px; }
+.dop-card{ padding:24px 20px; }
+.dop-card-title{ font-size:17px; }
+
+.citation-bloc{ padding:60px 6%; }
+.citation-bloc blockquote{ font-size:1.35rem; }
 
 }
 
 </style>
+
 </head>
+
 <body>
+
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="logo">
-            Y.E.S.I CONCEPT
-        </div>
+<img src="logo.png" class="logo" alt="Y.E.S.I CONCEPT">
 
-        <h1>Le Langage de la Performance</h1>
+<h1>LE LANGAGE DE LA PERFORMANCE</h1>
 
-        <p>
-            Comment les mots du coach façonnent la victoire.
-        </p>
+<h2>Comment les mots du coach façonnent la victoire.</h2>
 
-        <a href="#" class="btn">
-            ACCÉDER À LA FORMATION
-        </a>
+<p>
+Le discours d'un coach n'est pas qu'une simple consigne.
+C'est un levier capable de construire la confiance,
+d'orienter l'action et de sécuriser mentalement les athlètes
+dans les moments cruciaux.
+</p>
 
-    </div>
 
-</section>
 
-<section>
-
-    <h2 class="section-title">
-        Vos mots sont votre outil le plus puissant.
-    </h2>
-
-    <p class="section-subtitle">
-        Le discours d’un coach n’est pas qu’une simple consigne. 
-        C’est un levier de performance capable de construire la confiance, 
-        d’orienter l’action et de sécuriser mentalement les athlètes 
-        dans les moments cruciaux.
-    </p>
-
-    <p class="section-subtitle">
-        Y.E.S.I CONCEPT a développé une méthodologie pour maîtriser ce levier. 
-        Nous transformons la communication intuitive en une compétence stratégique et délibérée.
-    </p>
+</div>
 
 </section>
 
-<section class="dark">
+<!-- DEUX OUTILS -->
 
-    <h2 class="section-title">
-        Deux moments. Deux outils.
-    </h2>
+<section class="section">
 
-    <div class="grid-2">
+<div class="section-title">
+<h3>DEUX MOMENTS, DEUX OUTILS</h3>
+<p>Le parcours d'une compétition exige deux types de communication distincts.</p>
+</div>
 
-        <div class="card">
+<div class="intro-bloc">
 
-            <h3>PARTIE 1 : Avant la compétition</h3>
+<div class="intro-card">
+<div class="num">01.</div>
+<h4>D.P²</h4>
+<p>
+Le Discours Principal Positif.<br>
+Avant la compétition — construire un cadre mental optimal,
+ancrer des intentions positives et donner un sentiment de contrôle.
+</p>
+<span class="tag">AVANT LE MATCH</span>
+</div>
 
-            <p>
-                Maîtriser le discours pour bâtir la confiance et la clarté.
-            </p>
+<div class="intro-card">
+<div class="num">02.</div>
+<h4>D.O.P</h4>
+<p>
+Le Discours Opportun Positif.<br>
+Pendant la compétition — intervention brève et ciblée
+pour couper une dynamique négative et maintenir la lucidité.
+</p>
+<span class="tag">PENDANT LE MATCH</span>
+</div>
 
-            <br>
+</div>
 
-            <strong>Le Discours Principal Positif (D.P²)</strong>
+<!-- 5 PRINCIPES -->
 
-        </div>
+<div class="section-title">
+<h3>LES 5 PRINCIPES DU D.P²</h3>
+</div>
 
-        <div class="card">
+<div class="principes-list">
 
-            <h3>PARTIE 2 : Pendant la compétition</h3>
+<div class="principe-item">
+<div class="principe-num">1</div>
+<div class="principe-text">
+<strong>Faciliter</strong>
+<span>plutôt que compliquer.</span>
+</div>
+</div>
 
-            <p>
-                Intervenir avec précision pour maintenir le cap.
-            </p>
+<div class="principe-item">
+<div class="principe-num">2</div>
+<div class="principe-text">
+<strong>Valoriser les capacités</strong>
+<span>plutôt que pointer les manques.</span>
+</div>
+</div>
 
-            <br>
+<div class="principe-item">
+<div class="principe-num">3</div>
+<div class="principe-text">
+<strong>Orienter vers l'action</strong>
+<span>plutôt que l'évitement.</span>
+</div>
+</div>
 
-            <strong>Le Discours Opportun Positif (D.O.P)</strong>
+<div class="principe-item">
+<div class="principe-num">4</div>
+<div class="principe-text">
+<strong>Créer de la confiance</strong>
+<span>plutôt que générer du doute.</span>
+</div>
+</div>
 
-        </div>
+<div class="principe-item">
+<div class="principe-num">5</div>
+<div class="principe-text">
+<strong>Donner du contrôle</strong>
+<span>plutôt que subir la situation.</span>
+</div>
+</div>
 
-    </div>
-
-</section>
-
-<section>
-
-    <h2 class="section-title">
-        Le Discours Principal Positif (D.P²)
-    </h2>
-
-    <p class="section-subtitle">
-        Protocole de communication pour transformer le négatif 
-        en positif pour l’équipe.
-    </p>
-
-    <p class="section-subtitle">
-        L’objectif du D.P² est de construire un cadre mental optimal avant même le début de l’épreuve. 
-        Il s’agit d’ancrer des intentions positives et de donner aux athlètes un sentiment de contrôle.
-    </p>
-
-    <div class="principles">
-
-        <div class="principle">
-            ✔ Faciliter plutôt que compliquer.
-        </div>
-
-        <div class="principle">
-            ✔ Valoriser les capacités plutôt que pointer les manques.
-        </div>
-
-        <div class="principle">
-            ✔ Orienter vers l’action plutôt que l’évitement.
-        </div>
-
-        <div class="principle">
-            ✔ Créer de la confiance plutôt que générer du doute.
-        </div>
-
-        <div class="principle">
-            ✔ Donner du contrôle plutôt que subir la situation.
-        </div>
-
-    </div>
-
-</section>
-
-<section class="dark">
-
-    <h2 class="section-title">
-        Applications concrètes du D.P²
-    </h2>
-
-    <div class="grid-2">
-
-        <div class="card">
-            <h3>Transformer la pression en contrôle</h3>
-
-            <p>
-                ❌ « Ne stressez pas »
-            </p>
-
-            <br>
-
-            <p>
-                ✅ « Restez sereins, jouez votre jeu. »
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Orienter l’équipe vers l’action</h3>
-
-            <p>
-                ❌ « Attention à ne pas refaire les mêmes erreurs »
-            </p>
-
-            <br>
-
-            <p>
-                ✅ « Appliquez ce qu’on a travaillé cette semaine. »
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Renforcer la confiance</h3>
-
-            <p>
-                ❌ « Surtout ne perdez pas le ballon »
-            </p>
-
-            <br>
-
-            <p>
-                ✅ « Prenez les bonnes décisions avec le ballon. »
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Créer de la cohésion</h3>
-
-            <p>
-                ❌ « J’espère que vous ne jouerez pas chacun dans votre coin »
-            </p>
-
-            <br>
-
-            <p>
-                ✅ « On joue ensemble, chaque action collective nous rapproche de la victoire. »
-            </p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<section>
+<!-- APPLICATION D.P² -->
 
-    <h2 class="section-title">
-        Le Discours Opportun Positif (D.O.P)
-    </h2>
+<section class="section" style="background:white; padding-top:0;">
 
-    <p class="section-subtitle">
-        Communication stratégique en situation de compétition.
-    </p>
+<div class="section-title" style="padding-top:90px;">
+<h3>APPLICATION D.P²</h3>
+<p>Transformer chaque discours négatif en levier de performance.</p>
+</div>
 
-    <p class="section-subtitle">
-        Le D.O.P est une intervention brève et ciblée pour répondre à une situation spécifique. 
-        L’objectif est de couper une dynamique négative, de rassurer, 
-        ou de maintenir la lucidité en temps réel.
-    </p>
+<div class="grid">
 
-</section>
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">01.</div>
+<div class="card-badge">STRESS</div>
+</div>
+<div class="card-content">
+<p class="situation">Gestion du Stress</p>
+<h4>Transformer la Pression</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« Ne stressez pas, il ne faut pas paniquer… »</span></div>
+<div class="phrase-good">✅ <span>« Restez sereins, jouez votre jeu. »</span></div>
+</div>
+<p class="card-note">« Ne stressez pas » active le stress. « Restez sereins » active la sérénité. Même intention, impact inversé.</p>
+</div>
+</div>
 
-<section class="dark">
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">02.</div>
+<div class="card-badge">ENJEU</div>
+</div>
+<div class="card-content">
+<p class="situation">Enjeu du Match</p>
+<h4>Désir de Gagner</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« On ne peut pas se permettre de perdre ce match… »</span></div>
+<div class="phrase-good">✅ <span>« On va prendre ce match, c'est l'occasion de montrer ce qu'on vaut. »</span></div>
+</div>
+<p class="card-note">On transforme la peur de perdre en désir de gagner. Changement de dynamique émotionnelle.</p>
+</div>
+</div>
 
-    <h2 class="section-title">
-        Gérer les moments négatifs
-    </h2>
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1508098682722-e99c643e7485?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">03.</div>
+<div class="card-badge">CONTRÔLE</div>
+</div>
+<div class="card-content">
+<p class="situation">Incertitude du Résultat</p>
+<h4>Sentiment de Contrôle</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« On ne sait jamais ce qui peut se passer… »</span></div>
+<div class="phrase-good">✅ <span>« On va créer notre match, c'est nous qui décidons. »</span></div>
+</div>
+<p class="card-note">On retire l'incertitude anxiogène pour donner un sentiment de contrôle et d'agentivité.</p>
+</div>
+</div>
 
-    <div class="grid-2">
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">04.</div>
+<div class="card-badge">ACTION</div>
+</div>
+<div class="card-content">
+<p class="situation">Qualité de l'Adversaire</p>
+<h4>Imposer Notre Jeu</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« Ils sont forts, il ne faut pas les laisser jouer… »</span></div>
+<div class="phrase-good">✅ <span>« On va imposer notre jeu dès le début. »</span></div>
+</div>
+<p class="card-note">On oriente vers NOTRE plan plutôt que de subir le leur. L'équipe se concentre sur ce qu'elle contrôle.</p>
+</div>
+</div>
 
-        <div class="card">
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">05.</div>
+<div class="card-badge">PROGRÈS</div>
+</div>
+<div class="card-content">
+<p class="situation">Erreurs à Éviter</p>
+<h4>Ancrer le Progrès</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« Attention à ne pas faire les mêmes erreurs que la dernière fois… »</span></div>
+<div class="phrase-good">✅ <span>« Appliquez ce qu'on a travaillé cette semaine. »</span></div>
+</div>
+<p class="card-note">On ancre les corrections récentes plutôt que de raviver les échecs passés. Orientation vers le progrès.</p>
+</div>
+</div>
 
-            <h3>Erreur immédiate</h3>
+<div class="card">
+<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1974&auto=format&fit=crop');">
+<div class="card-number">06.</div>
+<div class="card-badge">COHÉSION</div>
+</div>
+<div class="card-content">
+<p class="situation">Cohésion Collective</p>
+<h4>L'Unité Collective</h4>
+<div class="phrases">
+<div class="phrase-bad">❌ <span>« J'espère que vous ne jouerez pas chacun dans votre coin… »</span></div>
+<div class="phrase-good">✅ <span>« On joue ensemble, chaque action collective nous rapproche de la victoire. »</span></div>
+</div>
+<p class="card-note">On renforce l'unité positivement plutôt que de craindre la division.</p>
+</div>
+</div>
 
-            <p>
-                « C’est fait. Replace-toi. Tu redemandes. »
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Accumulation d’erreurs</h3>
-
-            <p>
-                « Simplifie. Une touche si besoin. »
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Temps faible collectif</h3>
-
-            <p>
-                « Bloc compact. Une action à la fois. »
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Pression adverse forte</h3>
-
-            <p>
-                « Calme. Fixe puis joue. »
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section>
-
-    <h2 class="section-title">
-        Gérer les moments clés
-    </h2>
-
-    <div class="grid-2">
-
-        <div class="card">
-
-            <h3>Temps fort individuel</h3>
-
-            <p>
-                « Même intensité. Même exigence. »
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Moment clé de fin de match</h3>
-
-            <p>
-                « Fais simple. Confiance. »
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="dark">
-
-    <div class="quote">
-        « Le cerveau retient ce qu’on lui dit de faire,
-        pas ce qu’on lui dit d’éviter. »
-    </div>
-
-</section>
-
-<section class="cta">
-
-    <h2>
-        Prêt à maîtriser le langage de la performance ?
-    </h2>
-
-    <p>
-        Une méthodologie Y.E.S.I CONCEPT pensée pour les entraîneurs,
-        éducateurs et préparateurs qui veulent impacter avec précision.
-    </p>
-
-    <a href="#" class="btn">
-        REJOINDRE LA FORMATION
-    </a>
+</div>
 
 </section>
 
-<footer class="footer">
+<!-- APPLICATION D.O.P -->
 
-    <p>
-        Y.E.S.I CONCEPT
-    </p>
+<section class="section-dark">
 
-    <p>
-        Préparation Mentale • Performance • Excellence Sportive
-    </p>
+<div class="section-title">
+<h3>APPLICATION D.O.P</h3>
+<p>Interventions brèves en situation de match. Moins de mots, plus d'impact.</p>
+</div>
 
-    <p>
-        yesiconcept.rdv@gmail.com
-    </p>
+<div class="dop-grid">
 
-    <p>
-        07 63 58 77 83
-    </p>
+<div class="dop-card">
+<div class="dop-card-title">😠 Erreur Immédiate</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Frustration, colère, rumination.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Couper l'émotion négative et relancer l'action.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « C'est fait. Replace-toi. Tu redemandes. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Respire. Point suivant. Joue la zone. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Garde haute. Respire. On repart. »</span></div>
+</div>
+</div>
+
+<div class="dop-card">
+<div class="dop-card-title">😔 Accumulation d'Erreurs</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Doute, perte de confiance.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Rassurer sans déresponsabiliser.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « Simplifie. Une touche si besoin. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Ralentis. Routine. Engagement plein. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Cadence posée. Tu choisis tes coups. »</span></div>
+</div>
+</div>
+
+<div class="dop-card">
+<div class="dop-card-title">😵 Temps Faible Collectif</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Stress, confusion.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Redonner du contrôle et de la clarté.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « Bloc compact. Une action à la fois. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Schéma simple. Joue long si besoin. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Déplacements courts. Propre. »</span></div>
+</div>
+</div>
+
+<div class="dop-card">
+<div class="dop-card-title">😤 Pression Adverse Forte</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Tension, précipitation.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Stabiliser et recentrer.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « Calme. Fixe, puis joue. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Respiration. Même plan. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Tu vois. Tu contrôles. »</span></div>
+</div>
+</div>
+
+<div class="dop-card">
+<div class="dop-card-title">🤩 Temps Fort Individuel</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Excitation, euphorie.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Maintenir lucidité et rigueur.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « Même intensité. Même exigence. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Même routine. Rien ne change. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Patient. Propre. Contrôle. »</span></div>
+</div>
+</div>
+
+<div class="dop-card">
+<div class="dop-card-title">😐 Moment Clé (Fin)</div>
+<p class="dop-label">État Émotionnel</p>
+<p class="dop-val">Pression maximale.</p>
+<p class="dop-label">Objectif</p>
+<p class="dop-val">Sécuriser mentalement.</p>
+<p class="dop-label">Interventions</p>
+<div class="dop-interventions">
+<div class="dop-interv-item">⚽ <span>Football : « Fais simple. Confiance. »</span></div>
+<div class="dop-interv-item">🎾 <span>Tennis : « Respire. Engage. »</span></div>
+<div class="dop-interv-item">🥊 <span>Boxe : « Calme. Lucide. Présent. »</span></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- CITATION -->
+
+<div class="citation-bloc">
+
+<blockquote>
+« Le cerveau retient ce qu'on lui dit de faire,<br>
+pas ce qu'on lui dit d'éviter. »
+</blockquote>
+
+<cite>— LE PRINCIPE DIRECTEUR DE Y.E.S.I. CONCEPT</cite>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+Y.E.S.I CONCEPT © 2026
 
 </footer>
 
