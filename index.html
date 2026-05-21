@@ -20,58 +20,22 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:#0f1115;
+background:#090b0f;
 color:white;
 line-height:1.7;
-}
-
-header{
-padding:30px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #23262d;
-background:#0b0d11;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-family:'Playfair Display',serif;
-font-size:28px;
-letter-spacing:2px;
-}
-
-nav{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-size:14px;
-font-weight:600;
-opacity:0.85;
-transition:0.3s;
-}
-
-nav a:hover{
-opacity:1;
+overflow-x:hidden;
 }
 
 .hero{
-min-height:90vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 padding:60px 20px;
 background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1974&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.85)),
+url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=1974&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 }
@@ -80,32 +44,26 @@ background-position:center;
 max-width:950px;
 }
 
+.logo{
+width:140px;
+margin-bottom:35px;
+filter:drop-shadow(0 0 10px rgba(255,255,255,0.15));
+}
+
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:70px;
+font-size:72px;
 margin-bottom:25px;
 text-transform:uppercase;
+letter-spacing:2px;
 }
 
 .hero p{
 font-size:20px;
-color:#d7d7d7;
+color:#d6d6d6;
+max-width:850px;
+margin:auto;
 margin-bottom:40px;
-}
-
-.cta{
-display:inline-block;
-padding:18px 38px;
-background:white;
-color:black;
-font-weight:700;
-text-decoration:none;
-border-radius:10px;
-transition:0.3s;
-}
-
-.cta:hover{
-transform:scale(1.05);
 }
 
 .section{
@@ -115,35 +73,37 @@ padding:90px 10%;
 .section-title{
 font-family:'Playfair Display',serif;
 font-size:42px;
-margin-bottom:40px;
+margin-bottom:45px;
 text-transform:uppercase;
+text-align:center;
 }
 
 .modules{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+gap:28px;
 }
 
 .module{
-background:#171a20;
-border:1px solid #2b2f36;
-padding:30px;
-border-radius:18px;
+background:rgba(20,24,31,0.95);
+border:1px solid rgba(255,255,255,0.08);
+padding:32px;
+border-radius:22px;
 transition:0.3s;
+backdrop-filter:blur(8px);
 }
 
 .module:hover{
-transform:translateY(-5px);
-border-color:white;
+transform:translateY(-6px);
+border-color:#ffffff;
 }
 
 .module-number{
 font-size:14px;
 font-weight:700;
-letter-spacing:2px;
-color:#999;
-margin-bottom:15px;
+letter-spacing:3px;
+color:#a4a4a4;
+margin-bottom:18px;
 }
 
 .module h3{
@@ -152,25 +112,31 @@ margin-bottom:15px;
 }
 
 .module p{
-color:#c9c9c9;
-margin-bottom:25px;
+color:#cfcfcf;
+margin-bottom:28px;
+min-height:90px;
 }
 
 .btn{
 display:inline-block;
-padding:12px 20px;
+padding:14px 24px;
 background:white;
 color:black;
 text-decoration:none;
 font-weight:700;
-border-radius:8px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 .footer{
-padding:40px 20px;
+padding:45px 20px;
 text-align:center;
-border-top:1px solid #23262d;
-color:#8f8f8f;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#8d8d8d;
 margin-top:80px;
 }
 
@@ -181,11 +147,15 @@ font-size:42px;
 }
 
 .hero p{
-font-size:18px;
+font-size:17px;
 }
 
 .section-title{
 font-size:30px;
+}
+
+.logo{
+width:110px;
 }
 
 }
@@ -196,24 +166,11 @@ font-size:30px;
 
 <body>
 
-<header>
-
-<div class="logo">
-Y.E.S.I CONCEPT
-</div>
-
-<nav>
-
-<a href="#modules">FORMATIONS</a>
-<a href="https://buy.stripe.com/28EfZgamObLq9cG0yO8k806">PAIEMENT</a>
-
-</nav>
-
-</header>
-
 <section class="hero">
 
 <div class="hero-content">
+
+<img src="logo.png" class="logo">
 
 <h1>
 FORMATION PREMIUM
@@ -221,12 +178,8 @@ FORMATION PREMIUM
 
 <p>
 Plateforme autonome Y.E.S.I CONCEPT dédiée à la communication,
-la performance mentale et l’impact verbal dans le sport.
+à la performance mentale et à l’impact verbal dans le sport de haut niveau.
 </p>
-
-<a href="#modules" class="cta">
-ACCÉDER AUX MODULES
-</a>
 
 </div>
 
@@ -243,7 +196,7 @@ Modules disponibles
 <div class="module">
 
 <div class="module-number">
-01
+01.
 </div>
 
 <h3>
@@ -264,7 +217,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-011
+011.
 </div>
 
 <h3>
@@ -285,7 +238,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-02
+02.
 </div>
 
 <h3>
@@ -306,7 +259,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-03
+03.
 </div>
 
 <h3>
@@ -318,7 +271,7 @@ Compréhension des mécanismes mentaux
 et axes d’amélioration.
 </p>
 
-<a href="03.ETUDE DE CAS ALEXANDRE.html" class="btn" target="_blank">
+<a href="03.ETUDE_DE_CAS_ALEXANDRE.html" class="btn" target="_blank">
 OUVRIR
 </a>
 
@@ -327,7 +280,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-04
+04.
 </div>
 
 <h3>
@@ -348,7 +301,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-05
+05.
 </div>
 
 <h3>
@@ -369,7 +322,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-06
+06.
 </div>
 
 <h3>
@@ -381,7 +334,7 @@ Méthodologie et protocoles d’utilisation
 des outils Y.E.S.I CONCEPT.
 </p>
 
-<a href="06.YESI_Protocoles_DP2_DOP_Recapitulatif(2).html" class="btn" target="_blank">
+<a href="06.YESI_Protocoles_DP2_DOP_Recapitulatif.html" class="btn" target="_blank">
 OUVRIR
 </a>
 
@@ -390,7 +343,7 @@ OUVRIR
 <div class="module">
 
 <div class="module-number">
-07
+07.
 </div>
 
 <h3>
@@ -402,7 +355,7 @@ Support pratique et exercices d’application
 autonome.
 </p>
 
-<a href="07.Workbook.html" class="btn" target="_blank">
+<a href="07Workbook.html" class="btn" target="_blank">
 OUVRIR
 </a>
 
